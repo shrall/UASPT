@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Werewolf</string>
+    <string name="title">Werewolf</string>
+    <string name="startbtn">Start</string>
+    <string name="rolesbtn">Roles</string>
+    <string name="settingbtn">Setting</string>
+    <string name="exitbtn">Exit</string>
 </resources>
