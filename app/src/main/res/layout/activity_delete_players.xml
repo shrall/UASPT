@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".activities.addPlayers">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/playersToolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+
+        app:title="@string/editplayer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back_black_24dp"
+        app:titleTextColor="#FFFFFF" />
+
+    <ImageView
+        android:id="@+id/player_imgadd1"
+        android:layout_width="225dp"
+        android:layout_height="315dp"
+        android:background="@drawable/mainmenubtn"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/til_player_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playersToolbar"
+        app:layout_constraintVertical_bias="0.254" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="220dp"
+        android:layout_height="310dp"
+        android:foregroundGravity="center"
+        app:cardCornerRadius="15dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@+id/player_imgadd1"
+        app:layout_constraintEnd_toEndOf="@+id/player_imgadd1"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="@+id/player_imgadd1"
+        app:layout_constraintTop_toTopOf="@+id/player_imgadd1"
+        app:layout_constraintVertical_bias="0.248">
+
+        <ImageView
+            android:id="@+id/player_imgadd"
+            android:layout_width="220dp"
+            android:layout_height="310dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/player"
+            android:scaleType="centerCrop" />
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_player_name"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="200dp"
+        android:background="@drawable/mainmenubtn"
+        android:gravity="center"
+        app:boxStrokeColor="@null"
+        app:hintEnabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:fontFamily="@font/russo_one"
+            android:gravity="center|center_horizontal"
+            android:hint="@string/insertname" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ff1e56"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_player_name"
+        app:layout_constraintVertical_bias="0.555"
+        app:maxImageSize="40dp"
+        app:srcCompat="@drawable/ic_delete_black_24dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foregroundGravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintStart_toEndOf="@+id/fab_delete"
+        app:layout_constraintTop_toBottomOf="@+id/til_player_name"
+        app:layout_constraintVertical_bias="0.555"
+        app:maxImageSize="40dp"
+        app:srcCompat="@drawable/ic_add_a_photo_black_24dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_confirm_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="#00b38f"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toEndOf="@+id/fab_add_image"
+        app:layout_constraintTop_toBottomOf="@+id/til_player_name"
+        app:layout_constraintVertical_bias="0.0"
+        app:maxImageSize="40dp"
+        app:srcCompat="@drawable/ic_check_circle_black_24dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
