@@ -86,7 +86,6 @@ public class deletePlayers extends AppCompatActivity implements TextWatcher {
 
                     }
                 }
-
                 Players players = new Players(name, img);
                 PlayersArray.theData.add(players);
                 Intent intent = new Intent(deletePlayers.this, playersPage.class);

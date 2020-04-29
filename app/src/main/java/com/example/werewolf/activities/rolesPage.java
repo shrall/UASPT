@@ -1,14 +1,16 @@
-package com.example.werewolf;
+package com.example.werewolf.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class playersPage extends AppCompatActivity {
+import com.example.werewolf.R;
+
+public class rolesPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_players_page);
+        setContentView(R.layout.activity_roles_page);
     }
 }

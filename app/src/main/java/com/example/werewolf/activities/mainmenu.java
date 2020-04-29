@@ -1,4 +1,4 @@
-package com.example.werewolf;
+package com.example.werewolf.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.werewolf.R;
 
 public class mainmenu extends AppCompatActivity {
 
