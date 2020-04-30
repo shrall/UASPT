@@ -11,6 +11,7 @@
         android:id="@+id/playersToolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/russo_one"
         android:background="@color/colorAccent"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"

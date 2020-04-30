@@ -15,6 +15,7 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
 
+        android:fontFamily="@font/russo_one"
         app:title="@string/addplayers"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,34 +84,17 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#ff1e56"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.154"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_player_name"
-        app:layout_constraintVertical_bias="0.555"
-        app:maxImageSize="40dp"
-        app:srcCompat="@drawable/ic_delete_black_24dp" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="260dp"
         android:clickable="true"
         android:focusable="true"
         android:foregroundGravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.27"
-        app:layout_constraintStart_toEndOf="@+id/fab_delete"
         app:layout_constraintTop_toBottomOf="@+id/til_player_name"
-        app:layout_constraintVertical_bias="0.555"
+        app:layout_constraintVertical_bias="0.552"
         app:maxImageSize="40dp"
         app:srcCompat="@drawable/ic_add_a_photo_black_24dp" />
 

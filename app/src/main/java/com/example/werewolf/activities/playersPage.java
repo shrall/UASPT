@@ -64,11 +64,13 @@ public class playersPage extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (thePlayers.size()>=3){
+                if (thePlayers.size()>=3 && thePlayers.size()<=8){
                     Intent intent = new Intent(playersPage.this, selectRoles.class);
                     startActivity(intent);
-                } else{
+                } else if(thePlayers.size()>=3){
                     Toast.makeText(playersPage.this, "Minimum 3 Players are required to play!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(playersPage.this, "Maximum 8 Players!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

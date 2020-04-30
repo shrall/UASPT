@@ -30,7 +30,7 @@ public class addPlayers extends AppCompatActivity implements TextWatcher {
 
     private ImageView imageView;
     TextInputLayout iName;
-    FloatingActionButton fabDel, fabImg, fabOk;
+    FloatingActionButton  fabImg, fabOk;
     String name;
     Uri img;
     Toolbar toolbar;
@@ -42,7 +42,6 @@ public class addPlayers extends AppCompatActivity implements TextWatcher {
         setContentView(R.layout.activity_add_players);
 
         iName = findViewById(R.id.til_player_name);
-        fabDel = findViewById(R.id.fab_delete);
         fabImg = findViewById(R.id.fab_add_image);
         fabOk = findViewById(R.id.fab_confirm_add);
         imageView = findViewById(R.id.player_imgadd);
