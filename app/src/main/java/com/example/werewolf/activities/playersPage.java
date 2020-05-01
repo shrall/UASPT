@@ -67,7 +67,7 @@ public class playersPage extends AppCompatActivity {
                 if (thePlayers.size()>=3 && thePlayers.size()<=8){
                     Intent intent = new Intent(playersPage.this, selectRoles.class);
                     startActivity(intent);
-                } else if(thePlayers.size()>=3){
+                } else if(thePlayers.size()<=3){
                     Toast.makeText(playersPage.this, "Minimum 3 Players are required to play!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(playersPage.this, "Maximum 8 Players!", Toast.LENGTH_SHORT).show();

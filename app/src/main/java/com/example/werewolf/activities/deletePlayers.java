@@ -65,6 +65,7 @@ public class deletePlayers extends AppCompatActivity implements TextWatcher {
         tempstring = p.getPname();
         img = p.getPimg();
         toolbar = findViewById(R.id.playersToolbar);
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

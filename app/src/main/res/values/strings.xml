@@ -20,5 +20,6 @@
     <string name="htrole">Hunter</string>
     <string name="sprole">Special Roles</string>
     <string name="rolecounter">0</string>
+    <string name="start">Start</string>
 
 </resources>
