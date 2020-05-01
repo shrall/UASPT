@@ -49,68 +49,64 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="428dp"
         android:background="@drawable/selectrolesbtn"
         android:fontFamily="@font/russo_one"
         android:gravity="center"
         android:text="+"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vgrole" />
 
     <Button
         android:id="@+id/btn_plusww"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="132dp"
-        android:layout_marginBottom="428dp"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="144dp"
         android:background="@drawable/selectrolesbtn"
         android:fontFamily="@font/russo_one"
         android:gravity="center"
         android:text="+"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wwrole" />
 
     <Button
         android:id="@+id/btn_minww"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginBottom="428dp"
+        android:layout_marginStart="44dp"
         android:background="@drawable/selectrolesbtn"
         android:fontFamily="@font/russo_one"
         android:gravity="center"
         android:text="-"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wwrole" />
 
     <Button
         android:id="@+id/btn_minvg"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginEnd="124dp"
-        android:layout_marginBottom="428dp"
         android:background="@drawable/selectrolesbtn"
         android:fontFamily="@font/russo_one"
         android:gravity="center"
         android:text="-"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vgrole" />
 
     <TextView
         android:id="@+id/vgcounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/russo_one"
         android:text="@string/rolecounter"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.767"
+        app:layout_constraintHorizontal_bias="0.76"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vgrole" />
 
@@ -132,11 +128,13 @@
         android:id="@+id/kncounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/russo_one"
         android:text="@string/rolecounter"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/knrole" />
 
@@ -144,13 +142,13 @@
         android:id="@+id/srcounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/russo_one"
         android:text="@string/rolecounter"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/srrole" />
 
@@ -242,47 +240,46 @@
         android:id="@+id/sprole"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="284dp"
         android:fontFamily="@font/russo_one"
         android:text="@string/sprole"
         android:textColor="@android:color/white"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rolesToolbar"
-        app:layout_constraintVertical_bias="0.423" />
+        app:layout_constraintTop_toBottomOf="@+id/rolesToolbar" />
 
     <ImageView
         android:id="@+id/iv_seer"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="244dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sprole"
         app:srcCompat="@drawable/mainmenubtn" />
 
     <ImageView
         android:id="@+id/iv_knight"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="244dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toStartOf="@+id/iv_hunter"
-        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toEndOf="@+id/iv_seer"
+        app:layout_constraintTop_toBottomOf="@+id/sprole"
         app:srcCompat="@drawable/mainmenubtn" />
 
     <ImageView
         android:id="@+id/iv_hunter"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="244dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sprole"
         app:srcCompat="@drawable/mainmenubtn" />
 
     <Button
@@ -290,97 +287,95 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="356dp"
-        android:layout_marginBottom="184dp"
         android:background="@drawable/selectrolesbtn"
         android:fontFamily="@font/russo_one"
         android:gravity="center"
         android:text="+"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/htrole" />
 
     <Button
         android:id="@+id/btn_minseer"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="32dp"
-        android:layout_marginBottom="184dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/selectrolesbtn"
         android:fontFamily="@font/russo_one"
         android:gravity="center"
         android:text="-"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_seer" />
 
     <Button
         android:id="@+id/btn_plusknight"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="228dp"
-        android:layout_marginBottom="184dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/selectrolesbtn"
         android:fontFamily="@font/russo_one"
         android:gravity="center"
         android:text="+"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_knight" />
 
     <Button
         android:id="@+id/btn_plusseer"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="100dp"
-        android:layout_marginBottom="184dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/selectrolesbtn"
         android:fontFamily="@font/russo_one"
         android:gravity="center"
         android:text="+"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_seer" />
 
     <Button
         android:id="@+id/btn_minknight"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="160dp"
-        android:layout_marginBottom="184dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/selectrolesbtn"
         android:fontFamily="@font/russo_one"
         android:gravity="center"
         android:text="-"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_knight" />
 
     <Button
         android:id="@+id/btn_minhunter"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="288dp"
-        android:layout_marginBottom="184dp"
         android:background="@drawable/selectrolesbtn"
         android:fontFamily="@font/russo_one"
         android:gravity="center"
         android:text="-"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/htrole" />
 
     <Button
         android:id="@+id/btn_confirm_roles"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="44dp"
         android:background="@drawable/mainmenubtn"
         android:fontFamily="@font/russo_one"
         android:text="@string/confirm"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent" />
 
 
