@@ -2,6 +2,7 @@ package com.example.werewolf.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -30,7 +31,7 @@ public class addPlayers extends AppCompatActivity implements TextWatcher {
 
     private ImageView imageView;
     TextInputLayout iName;
-    FloatingActionButton  fabImg, fabOk;
+    FloatingActionButton fabImg, fabOk;
     String name;
     Uri img;
     Toolbar toolbar;
@@ -48,7 +49,6 @@ public class addPlayers extends AppCompatActivity implements TextWatcher {
         fabImg = findViewById(R.id.fab_add_image);
 
 
-
         iName.getEditText().addTextChangedListener(this);
 
         toolbar = findViewById(R.id.playersToolbar);
@@ -62,10 +62,14 @@ public class addPlayers extends AppCompatActivity implements TextWatcher {
         fabOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Players players = new Players(name, img);
-                PlayersArray.theData.add(players);
-                Intent intent = new Intent(addPlayers.this, playersPage.class);
-                startActivity(intent);
+                if (name == null) {
+                    Toast.makeText(addPlayers.this, "Name cannot be empty!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Players players = new Players(name, img);
+                    PlayersArray.theData.add(players);
+                    Intent intent = new Intent(addPlayers.this, playersPage.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -90,7 +94,7 @@ public class addPlayers extends AppCompatActivity implements TextWatcher {
             @Override
             public void onClick(DialogInterface dialog, int item) {
 
-                 if (options[item].equals("Choose from Gallery")) {
+                if (options[item].equals("Choose from Gallery")) {
                     Intent pickPhoto = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                     startActivityForResult(pickPhoto, 0);//one can be replaced with any action code
 
@@ -138,7 +142,6 @@ public class addPlayers extends AppCompatActivity implements TextWatcher {
     }
 
 
-
     @Override
     public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -155,7 +158,7 @@ public class addPlayers extends AppCompatActivity implements TextWatcher {
     }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         Intent intent = new Intent(addPlayers.this, playersPage.class);
         startActivity(intent);
 

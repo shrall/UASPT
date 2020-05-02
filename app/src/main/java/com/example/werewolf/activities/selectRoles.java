@@ -47,7 +47,7 @@ public class selectRoles extends AppCompatActivity {
         btn_minht = findViewById(R.id.btn_minhunter);
         btn_minkn = findViewById(R.id.btn_minknight);
 
-        btn_confirm_roles = findViewById(R.id.btn_start);
+        btn_confirm_roles = findViewById(R.id.btn_reveal);
 
         wwcounter = findViewById(R.id.wwcounter);
         vgcounter = findViewById(R.id.vgcounter);

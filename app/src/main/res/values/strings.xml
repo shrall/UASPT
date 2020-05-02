@@ -21,5 +21,8 @@
     <string name="sprole">Special Roles</string>
     <string name="rolecounter">0</string>
     <string name="start">Start</string>
+    <string name="reveal">reveal</string>
+    <string name="guide2">Press the button below\n to reveal your role</string>
+    <string name="guide1">Hand the phone\n to this player</string>
 
 </resources>

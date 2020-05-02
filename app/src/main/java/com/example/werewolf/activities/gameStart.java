@@ -2,11 +2,11 @@ package com.example.werewolf.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.werewolf.R;
 import com.example.werewolf.model.Players;
@@ -14,28 +14,25 @@ import com.example.werewolf.model.PlayersArray;
 import com.example.werewolf.model.startPlayers;
 import com.example.werewolf.model.startPlayersArray;
 
-import java.net.URI;
 import java.util.ArrayList;
 
 public class gameStart extends AppCompatActivity {
-    int ww, vg, kn, sr, ht, roleselect, x;
-    String playername, playerrole, temp;
+    int ww, vg, kn, sr, ht, roleselect;
+    String playername, playerrole;
     Uri playerimg;
     Players p;
-    startPlayers sp;
     Button tb;
-    ArrayList<String> role;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_start);
+        tb = findViewById(R.id.btn_reveal);
         ww = selectRoles.ww;
         sr = selectRoles.sr;
         ht = selectRoles.ht;
         vg = selectRoles.vg;
         kn = selectRoles.kn;
-        tb = findViewById(R.id.btn_start);
         for (int i = 0; i < PlayersArray.theData.size(); i++) {
             p = PlayersArray.theData.get(i);
             playername = p.getPname();
@@ -95,6 +92,14 @@ public class gameStart extends AppCompatActivity {
             }
             startPlayersArray.theData.add(new startPlayers(playername, playerrole, playerimg));
         }
+
+        tb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(gameStart.this, playerPrompt.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

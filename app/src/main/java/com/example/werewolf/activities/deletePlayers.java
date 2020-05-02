@@ -87,10 +87,14 @@ public class deletePlayers extends AppCompatActivity implements TextWatcher {
 
                     }
                 }
-                Players players = new Players(name, img);
-                PlayersArray.theData.add(players);
-                Intent intent = new Intent(deletePlayers.this, playersPage.class);
-                startActivity(intent);
+                if (name == null) {
+                    Toast.makeText(deletePlayers.this, "Name cannot be empty!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Players players = new Players(name, img);
+                    PlayersArray.theData.add(players);
+                    Intent intent = new Intent(deletePlayers.this, playersPage.class);
+                    startActivity(intent);
+                }
             }
         });
 
