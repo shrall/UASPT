@@ -24,5 +24,14 @@
     <string name="reveal">reveal</string>
     <string name="guide2">Press the button below\n to reveal your role</string>
     <string name="guide1">Hand the phone\n to this player</string>
+    <string name="actionkill">Kill</string>
+    <string name="actiondone">Done</string>
+    <string name="roleww">Werewolf</string>
+    <string name="actionselect">Select</string>
+    <string name="rolesr">The Seer</string>
+    <string name="actionguard">Guard</string>
+    <string name="roleknight">Knight</string>
+    <string name="roleht">Hunter</string>
+    <string name="rolevg">Villager</string>
 
 </resources>

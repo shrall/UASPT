@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.example.werewolf.R;
 import com.example.werewolf.model.startPlayers;
 import com.example.werewolf.model.startPlayersArray;
-import com.example.werewolf.playerTurn;
 
 public class playerPrompt extends AppCompatActivity {
 

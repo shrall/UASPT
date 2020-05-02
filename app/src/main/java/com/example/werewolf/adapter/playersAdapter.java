@@ -31,7 +31,7 @@ public class playersAdapter extends RecyclerView.Adapter<playersAdapter.MyViewHo
 
         View view;
         LayoutInflater pInflater = LayoutInflater.from(pContext);
-        view = pInflater.inflate(R.layout.player_list,parent,false);
+        view = pInflater.inflate(R.layout.player_list, parent, false);
 
 
         return new MyViewHolder(view);
@@ -57,8 +57,8 @@ public class playersAdapter extends RecyclerView.Adapter<playersAdapter.MyViewHo
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            player_name = (TextView) itemView.findViewById(R.id.player_name);
-            player_img = (ImageView) itemView.findViewById(R.id.player_imgprompt);
+            player_name = itemView.findViewById(R.id.player_name);
+            player_img = itemView.findViewById(R.id.player_imgprompt);
 
 
         }

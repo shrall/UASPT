@@ -77,7 +77,7 @@ public class playersPage extends AppCompatActivity {
 
         thePlayers = PlayersArray.theData;
 
-        RecyclerView myrv = (RecyclerView) findViewById(R.id.rv_player);
+        RecyclerView myrv = findViewById(R.id.rv_player);
         playersAdapter myAdapter = new playersAdapter(this, thePlayers);
         myrv.setLayoutManager(new GridLayoutManager(this,3));
         myrv.setAdapter(myAdapter);
