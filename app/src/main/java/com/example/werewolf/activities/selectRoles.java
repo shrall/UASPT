@@ -21,7 +21,11 @@ public class selectRoles extends AppCompatActivity {
     Button btn_plusww, btn_plusvg, btn_plussr, btn_plusht, btn_pluskn, btn_minww, btn_minvg, btn_minsr, btn_minht, btn_minkn, btn_confirm_roles;
     Toolbar toolbar;
     TextView wwcounter, vgcounter, srcounter, htcounter, kncounter;
-    int ww, vg, sr, ht, kn;
+    static int ww;
+    static int vg;
+    static int sr;
+    static int ht;
+    static int kn;
     ArrayList<Players> thePlayers;
 
     @Override
