@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.werewolf.R;
-import com.example.werewolf.activities.playersPage;
 import com.example.werewolf.model.Players;
 
 import java.util.ArrayList;
@@ -32,7 +31,7 @@ public class playersAdapter extends RecyclerView.Adapter<playersAdapter.MyViewHo
 
         View view;
         LayoutInflater pInflater = LayoutInflater.from(pContext);
-        view = pInflater.inflate(R.layout.player_list,parent,false);
+        view = pInflater.inflate(R.layout.player_list, parent, false);
 
 
         return new MyViewHolder(view);
@@ -58,8 +57,8 @@ public class playersAdapter extends RecyclerView.Adapter<playersAdapter.MyViewHo
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            player_name = (TextView) itemView.findViewById(R.id.player_name);
-            player_img = (ImageView) itemView.findViewById(R.id.player_img);
+            player_name = itemView.findViewById(R.id.player_name);
+            player_img = itemView.findViewById(R.id.player_imgprompt);
 
 
         }

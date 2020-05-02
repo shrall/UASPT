@@ -38,7 +38,7 @@
             cardview:cardCornerRadius="15dp">
 
             <ImageView
-                android:id="@+id/player_img"
+                android:id="@+id/player_imgprompt"
                 android:layout_width="110dp"
                 android:layout_height="155dp"
                 android:contentDescription="@string/player"
@@ -53,7 +53,7 @@
             android:gravity="center"
             android:text="@string/player"
             android:textColor="#ffffff"
-            android:textSize="16sp"
+            android:textSize="12sp"
             cardview:layout_constraintBottom_toBottomOf="parent"
             cardview:layout_constraintEnd_toEndOf="parent"
             cardview:layout_constraintStart_toStartOf="parent" />
