@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 public class playerTurn extends AppCompatActivity {
     TextView roleName, playerNameAction;
-    String actionstring, rolestring;
+    String rolestring, actionedplayer;
     startPlayers sp;
     Integer index;
     ArrayList<Players> thePlayers;
@@ -40,7 +40,7 @@ public class playerTurn extends AppCompatActivity {
         index = startPlayersArray.index;
         sp = startPlayersArray.theData.get(index);
         rolestring = sp.getSrole();
-
+        actionbtn = findViewById(R.id.confirmactionbtn);
         roleName = findViewById(R.id.playerrolename);
 
         if (rolestring.equals("ww")){
@@ -70,7 +70,18 @@ public class playerTurn extends AppCompatActivity {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                 playerNameAction.setText(thePlayers.get(position).getPname());
+                actionedplayer = thePlayers.get(position).getPname();
             }
         });
+
+        actionbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startPlayersArray.index++;
+                Intent intent = new Intent(playerTurn.this, playerPrompt.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
