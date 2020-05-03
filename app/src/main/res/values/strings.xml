@@ -33,5 +33,6 @@
     <string name="roleknight">Knight</string>
     <string name="roleht">Hunter</string>
     <string name="rolevg">Villager</string>
+    <string name="choose">Choose</string>
 
 </resources>

@@ -27,6 +27,17 @@
         app:layout_constraintTop_toBottomOf="@+id/ivplayerrole"
         app:srcCompat="@drawable/btndarkmode" />
 
+    <ImageView
+        android:id="@+id/ivrolebg2"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="296dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivplayerrole"
+        app:srcCompat="@drawable/btndarkmode" />
+
     <TextView
         android:id="@+id/playerrolename"
         android:layout_width="wrap_content"
@@ -40,10 +51,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivplayerrole" />
 
+    <TextView
+        android:id="@+id/playernameaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="304dp"
+        android:fontFamily="@font/russo_one"
+        android:text="@string/choose"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivplayerrole" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_turn"
         android:layout_width="409dp"
-        android:layout_height="281dp"
+        android:layout_height="200dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,6 +87,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_turn"
-        app:layout_constraintVertical_bias="0.481" />
+        app:layout_constraintVertical_bias="0.63" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

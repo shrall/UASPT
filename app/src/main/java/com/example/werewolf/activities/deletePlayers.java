@@ -30,16 +30,17 @@ import java.util.Iterator;
 public class deletePlayers extends AppCompatActivity implements TextWatcher {
 
 
-    ArrayList<Players> thePlayers;
+    ArrayList<Players> thePlayers, s;
     static String EXTRA_PLAYERS = "extra";
     private Players p;
     private ImageView imageView;
     TextInputLayout iName;
     TextInputEditText tName;
     FloatingActionButton fabDel, fabImg, fabOk;
-    String name, tempstring;
+    String name, tempstring,temp,check;
     Uri img;
     Toolbar toolbar;
+    int counter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class deletePlayers extends AppCompatActivity implements TextWatcher {
         if (getIntent().getParcelableExtra(EXTRA_PLAYERS)!= null){
             p = getIntent().getParcelableExtra(EXTRA_PLAYERS);
         }
+
 
         iName = findViewById(R.id.til_player_name);
         fabDel = findViewById(R.id.fab_delete);
@@ -60,6 +62,8 @@ public class deletePlayers extends AppCompatActivity implements TextWatcher {
 
 
         iName.getEditText().addTextChangedListener(this);
+        check = p.getPname();
+        s = PlayersArray.theData;
         tName.setText(p.getPname());
         imageView.setImageURI(p.getPimg());
         tempstring = p.getPname();
@@ -77,24 +81,50 @@ public class deletePlayers extends AppCompatActivity implements TextWatcher {
         fabOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Iterator<Players> iter = PlayersArray.theData.iterator();
-                while (iter.hasNext())
-                {
-                    Players user = iter.next();
-                    if(user.pname.equals(tempstring))
-                    {
-                        iter.remove();
+                counter = 0;
+                if (s.size() == 0) {
+                    if (name == null) {
+                        Toast.makeText(deletePlayers.this, "Name cannot be empty!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Players players = new Players(name, img);
+                        PlayersArray.theData.add(players);
+                        Intent intent = new Intent(deletePlayers.this, playersPage.class);
+                        startActivity(intent);
+                    }
+                } else {
+                    for (int i = 0; i < s.size(); i++) {
+                        temp = s.get(i).getPname();
+                        if (!temp.equals(name)||check.equals(name)) {
+                            counter++;
+                            if (counter == s.size()) {
+                                Iterator<Players> iter = PlayersArray.theData.iterator();
+                                while (iter.hasNext())
+                                {
+                                    Players user = iter.next();
+                                    if(user.pname.equals(tempstring))
+                                    {
+                                        iter.remove();
 
+                                    }
+                                }
+                                if (name == null) {
+                                    Toast.makeText(deletePlayers.this, "Name cannot be empty!", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Players players = new Players(name, img);
+                                    PlayersArray.theData.add(players);
+                                    Intent intent = new Intent(deletePlayers.this, playersPage.class);
+                                    startActivity(intent);
+                                }
+
+                            }
+                        } else {
+                            Toast.makeText(deletePlayers.this, "There's already a player with the same name!" + check + name, Toast.LENGTH_SHORT).show();
+                            break;
+                        }
                     }
                 }
-                if (name == null) {
-                    Toast.makeText(deletePlayers.this, "Name cannot be empty!", Toast.LENGTH_SHORT).show();
-                } else {
-                    Players players = new Players(name, img);
-                    PlayersArray.theData.add(players);
-                    Intent intent = new Intent(deletePlayers.this, playersPage.class);
-                    startActivity(intent);
-                }
+
+
             }
         });
 

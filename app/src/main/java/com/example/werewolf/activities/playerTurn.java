@@ -23,7 +23,7 @@ import com.example.werewolf.utils.itemClickSupport;
 import java.util.ArrayList;
 
 public class playerTurn extends AppCompatActivity {
-    TextView roleName;
+    TextView roleName, playerNameAction;
     String actionstring, rolestring;
     startPlayers sp;
     Integer index;
@@ -35,6 +35,7 @@ public class playerTurn extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_turn);
+        playerNameAction = findViewById(R.id.playernameaction);
         actionbtn = findViewById(R.id.confirmactionbtn);
         index = startPlayersArray.index;
         sp = startPlayersArray.theData.get(index);
@@ -68,7 +69,7 @@ public class playerTurn extends AppCompatActivity {
         itemClickSupport.addTo(myrv).setOnItemClickListener(new itemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
-
+                playerNameAction.setText(thePlayers.get(position).getPname());
             }
         });
     }

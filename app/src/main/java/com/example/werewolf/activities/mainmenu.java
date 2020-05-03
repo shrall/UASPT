@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,12 +16,16 @@ public class mainmenu extends AppCompatActivity {
 
     TextView textView;
     Button startBtn, rolesBtn, settingsBtn, exitBtn;
+    MediaPlayer ring;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainmenu);
-        textView = (TextView) findViewById(R.id.title);
+//        ring = MediaPlayer.create(mainmenu.this,R.raw.somnus);
+//        ring.start();
+
+        textView = findViewById(R.id.title);
         textView.setShadowLayer(1, 1, 2, Color.rgb(134, 133,239));
 
         startBtn = findViewById(R.id.startbtn);

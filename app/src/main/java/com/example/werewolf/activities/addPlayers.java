@@ -27,20 +27,25 @@ import com.example.werewolf.model.PlayersArray;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.ArrayList;
+
 public class addPlayers extends AppCompatActivity implements TextWatcher {
 
     private ImageView imageView;
     TextInputLayout iName;
     FloatingActionButton fabImg, fabOk;
-    String name;
+    String name, temp;
     Uri img;
     Toolbar toolbar;
+    ArrayList<Players> thePlayers;
+    int counter;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_players);
+        thePlayers = PlayersArray.theData;
 
         iName = findViewById(R.id.til_player_name);
         fabImg = findViewById(R.id.fab_add_image);
@@ -62,14 +67,41 @@ public class addPlayers extends AppCompatActivity implements TextWatcher {
         fabOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (name == null) {
-                    Toast.makeText(addPlayers.this, "Name cannot be empty!", Toast.LENGTH_SHORT).show();
+                counter = 0;
+                if (thePlayers.size() == 0) {
+                    if (name == null) {
+                        Toast.makeText(addPlayers.this, "Name cannot be empty!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Players players = new Players(name, img);
+                        PlayersArray.theData.add(players);
+                        Intent intent = new Intent(addPlayers.this, playersPage.class);
+                        startActivity(intent);
+                    }
                 } else {
-                    Players players = new Players(name, img);
-                    PlayersArray.theData.add(players);
-                    Intent intent = new Intent(addPlayers.this, playersPage.class);
-                    startActivity(intent);
+                    for (int i = 0; i < thePlayers.size(); i++) {
+                        temp = thePlayers.get(i).getPname();
+                        if (temp.equals(name)) {
+                            Toast.makeText(addPlayers.this, "There's already a player with the same name!" + temp + name, Toast.LENGTH_SHORT).show();
+                            break;
+                        } else {
+                            counter++;
+                            if (counter == thePlayers.size()) {
+                                if (name == null) {
+                                    Toast.makeText(addPlayers.this, "Name cannot be empty!", Toast.LENGTH_SHORT).show();
+                                    break;
+                                } else {
+                                    Players players = new Players(name, img);
+                                    PlayersArray.theData.add(players);
+                                    Intent intent = new Intent(addPlayers.this, playersPage.class);
+                                    startActivity(intent);
+                                    break;
+                                }
+
+                            }
+                        }
+                    }
                 }
+
             }
         });
 
