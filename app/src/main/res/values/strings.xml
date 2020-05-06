@@ -34,5 +34,6 @@
     <string name="roleht">Hunter</string>
     <string name="rolevg">Villager</string>
     <string name="choose">Choose</string>
+    <string name="is_a">is a</string>
 
 </resources>

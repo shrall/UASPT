@@ -81,7 +81,7 @@ public class addPlayers extends AppCompatActivity implements TextWatcher {
                     for (int i = 0; i < thePlayers.size(); i++) {
                         temp = thePlayers.get(i).getPname();
                         if (temp.equals(name)) {
-                            Toast.makeText(addPlayers.this, "There's already a player with the same name!" + temp + name, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(addPlayers.this, "There's already a player with the same name!", Toast.LENGTH_SHORT).show();
                             break;
                         } else {
                             counter++;

@@ -118,7 +118,7 @@ public class deletePlayers extends AppCompatActivity implements TextWatcher {
 
                             }
                         } else {
-                            Toast.makeText(deletePlayers.this, "There's already a player with the same name!" + check + name, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(deletePlayers.this, "There's already a player with the same name!", Toast.LENGTH_SHORT).show();
                             break;
                         }
                     }

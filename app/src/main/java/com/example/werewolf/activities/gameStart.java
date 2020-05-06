@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.werewolf.R;
 import com.example.werewolf.model.Players;
@@ -17,11 +18,12 @@ import com.example.werewolf.model.startPlayersArray;
 import java.util.ArrayList;
 
 public class gameStart extends AppCompatActivity {
-    int ww, vg, kn, sr, ht, roleselect;
+    int ww, vg, kn, sr, ht, roleselect, counter;
     String playername, playerrole;
     Uri playerimg;
     Players p;
     Button tb;
+    ArrayList<startPlayers> dePlayers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +93,17 @@ public class gameStart extends AppCompatActivity {
                 }
             }
             startPlayersArray.theData.add(new startPlayers(playername, playerrole, playerimg));
+        }
+        dePlayers = startPlayersArray.theData;
+
+        for (int i = 0; i < dePlayers.size(); i++) {
+            if (dePlayers.get(i).getSrole().equals("ww")){
+                startPlayersArray.werewolves.add(dePlayers.get(i).getSname());
+                Toast.makeText(gameStart.this, startPlayersArray.werewolves.get(counter), Toast.LENGTH_SHORT).show();
+                counter++;
+            }else{
+
+            }
         }
 
         tb.setOnClickListener(new View.OnClickListener() {
