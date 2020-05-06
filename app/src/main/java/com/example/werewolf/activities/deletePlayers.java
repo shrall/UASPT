@@ -37,7 +37,7 @@ public class deletePlayers extends AppCompatActivity implements TextWatcher {
     TextInputLayout iName;
     TextInputEditText tName;
     FloatingActionButton fabDel, fabImg, fabOk;
-    String name, tempstring,temp,check;
+    String name, tempstring, temp, check;
     Uri img;
     Toolbar toolbar;
     int counter;
@@ -46,7 +46,7 @@ public class deletePlayers extends AppCompatActivity implements TextWatcher {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_players);
-        if (getIntent().getParcelableExtra(EXTRA_PLAYERS)!= null){
+        if (getIntent().getParcelableExtra(EXTRA_PLAYERS) != null) {
             p = getIntent().getParcelableExtra(EXTRA_PLAYERS);
         }
 
@@ -94,15 +94,13 @@ public class deletePlayers extends AppCompatActivity implements TextWatcher {
                 } else {
                     for (int i = 0; i < s.size(); i++) {
                         temp = s.get(i).getPname();
-                        if (!temp.equals(name)||check.equals(name)) {
+                        if (!temp.equals(name) || check.equals(name)) {
                             counter++;
                             if (counter == s.size()) {
                                 Iterator<Players> iter = PlayersArray.theData.iterator();
-                                while (iter.hasNext())
-                                {
+                                while (iter.hasNext()) {
                                     Players user = iter.next();
-                                    if(user.pname.equals(tempstring))
-                                    {
+                                    if (user.pname.equals(tempstring)) {
                                         iter.remove();
 
                                     }
@@ -132,11 +130,9 @@ public class deletePlayers extends AppCompatActivity implements TextWatcher {
             @Override
             public void onClick(View v) {
                 Iterator<Players> iter = PlayersArray.theData.iterator();
-                while (iter.hasNext())
-                {
+                while (iter.hasNext()) {
                     Players user = iter.next();
-                    if(user.pname.equals(tempstring))
-                    {
+                    if (user.pname.equals(tempstring)) {
                         iter.remove();
 
                     }
@@ -227,8 +223,9 @@ public class deletePlayers extends AppCompatActivity implements TextWatcher {
     public void afterTextChanged(Editable editable) {
 
     }
+
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         Intent intent = new Intent(deletePlayers.this, playersPage.class);
         startActivity(intent);
 

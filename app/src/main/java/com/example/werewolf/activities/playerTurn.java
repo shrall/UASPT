@@ -26,13 +26,14 @@ import java.util.ArrayList;
 public class playerTurn extends AppCompatActivity {
     int ct;
     TextView roleName, playerNameAction, playerFriends;
-    String rolestring, actionedplayer;
+    String rolestring, actionedplayer, actionedplayerrole;
     String friends = "Werewolf : ";
+    String player;
     startPlayers sp;
     Integer index;
     ArrayList<Players> thePlayers;
     ArrayList<startPlayers> dePlayers;
-    Button actionbtn;
+    Button actionbtn, actionbtn2;
 
 
     @Override
@@ -50,7 +51,10 @@ public class playerTurn extends AppCompatActivity {
         roleName = findViewById(R.id.playerrolename);
         thePlayers = PlayersArray.theData;
         dePlayers = startPlayersArray.theData;
-
+        actionbtn2 = findViewById(R.id.confirmactionbtn2);
+        actionbtn2.setVisibility(View.GONE);
+        actionedplayer = "";
+        player = sp.getSname();
         if (ct == 0) {
             for (int i = 0; i < startPlayersArray.werewolves.size(); i++) {
                 if (i == 0) {
@@ -60,6 +64,13 @@ public class playerTurn extends AppCompatActivity {
                 }
             }
             ct++;
+        }
+        for (int i = 0; i < startPlayersArray.huntered.size(); i++) {
+            if (player.equals(startPlayersArray.huntered.get(i))) {
+                actionbtn.setVisibility(View.GONE);
+                actionbtn2.setVisibility(View.VISIBLE);
+                actionbtn2.setText("Done");
+            }
         }
 
         if (rolestring.equals("ww")) {
@@ -91,6 +102,7 @@ public class playerTurn extends AppCompatActivity {
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                 playerNameAction.setText(thePlayers.get(position).getPname());
                 actionedplayer = thePlayers.get(position).getPname();
+                actionedplayerrole = dePlayers.get(position).getSrole();
                 startPlayersArray.seered = dePlayers.get(position).getSrole();
                 startPlayersArray.seeredplayer = dePlayers.get(position).getSname();
             }
@@ -99,22 +111,50 @@ public class playerTurn extends AppCompatActivity {
         actionbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (rolestring.equals("sr")) {
-                    Intent intent = new Intent(playerTurn.this, seerAction.class);
-                    startActivity(intent);
-                } else {
-                    if (startPlayersArray.index+1 < startPlayersArray.theData.size()) {
-                        startPlayersArray.index++;
-                        Intent intent = new Intent(playerTurn.this, playerPrompt.class);
+                if (!actionedplayer.equals("")) {
+                    if (rolestring.equals("ww")) {
+                        if (actionedplayerrole.equals("ww")) {
+                            Toast.makeText(playerTurn.this, "You can't kill your friends!", Toast.LENGTH_SHORT).show();
+                        } else {
+                            startPlayersArray.killedPlayer.add(actionedplayer);
+                            nextTurn();
+                        }
+                    } else if (rolestring.equals("kn")) {
+                        startPlayersArray.guardedPlayer.add(actionedplayer);
+                        nextTurn();
+                    } else if (rolestring.equals("ht")) {
+                        startPlayersArray.huntered.add(player);
+                        startPlayersArray.huntedPlayer.add(actionedplayer);
+                        nextTurn();
+                    } else if (rolestring.equals("sr")) {
+                        Intent intent = new Intent(playerTurn.this, seerAction.class);
                         startActivity(intent);
                     } else {
-                        Intent intent = new Intent(playerTurn.this, finishTurn.class);
-                        startActivity(intent);
+                        nextTurn();
                     }
-
+                } else {
+                    Toast.makeText(playerTurn.this, "Please select a player!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+        actionbtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nextTurn();
+            }
+        });
 
+    }
+
+
+    public void nextTurn() {
+        if (startPlayersArray.index + 1 < startPlayersArray.theData.size()) {
+            startPlayersArray.index++;
+            Intent intent = new Intent(playerTurn.this, playerPrompt.class);
+            startActivity(intent);
+        } else {
+            Intent intent = new Intent(playerTurn.this, finishTurn.class);
+            startActivity(intent);
+        }
     }
 }

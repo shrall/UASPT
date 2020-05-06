@@ -97,11 +97,11 @@ public class gameStart extends AppCompatActivity {
         dePlayers = startPlayersArray.theData;
 
         for (int i = 0; i < dePlayers.size(); i++) {
-            if (dePlayers.get(i).getSrole().equals("ww")){
+            if (dePlayers.get(i).getSrole().equals("ww")) {
                 startPlayersArray.werewolves.add(dePlayers.get(i).getSname());
-                Toast.makeText(gameStart.this, startPlayersArray.werewolves.get(counter), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(gameStart.this, startPlayersArray.werewolves.get(counter), Toast.LENGTH_SHORT).show();
                 counter++;
-            }else{
+            } else {
 
             }
         }
@@ -114,8 +114,6 @@ public class gameStart extends AppCompatActivity {
             }
         });
     }
-
-
 
 
     public static double getRandomIntegerBetweenRange(double min, double max) {
