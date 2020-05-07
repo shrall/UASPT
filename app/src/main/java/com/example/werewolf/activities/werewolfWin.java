@@ -32,11 +32,11 @@ public class werewolfWin extends AppCompatActivity {
                 startPlayersArray.index = 0;
                 Intent intent = new Intent(werewolfWin.this, mainmenu.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
     @Override
     public void onBackPressed() {
-        finish();
     }
 }

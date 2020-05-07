@@ -31,11 +31,11 @@ public class villagerWin extends AppCompatActivity {
                 startPlayersArray.index = 0;
                 Intent intent = new Intent(villagerWin.this, mainmenu.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
     @Override
     public void onBackPressed() {
-        finish();
     }
 }
