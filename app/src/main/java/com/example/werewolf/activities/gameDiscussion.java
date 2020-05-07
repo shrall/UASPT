@@ -52,4 +52,8 @@ public class gameDiscussion extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+
+    }
 }

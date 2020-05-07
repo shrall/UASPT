@@ -37,23 +37,30 @@ public class killedPrompt extends AppCompatActivity {
         names.setText(name);
         startPlayersArray.killed.clear();
 
-        Toast.makeText(this, String.valueOf(startPlayersArray.theData.size())
-                + PlayersArray.theData.size() + startPlayersArray.killed.size() + startPlayersArray.killedPlayer.size() +
-                startPlayersArray.huntedPlayer.size() + startPlayersArray.guardedPlayer.size() +
-                startPlayersArray.index + startPlayersArray.werewolves.size(), Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, String.valueOf(startPlayersArray.theData.size())
+//                + PlayersArray.theData.size() + startPlayersArray.killed.size() + startPlayersArray.killedPlayer.size() +
+//                startPlayersArray.huntedPlayer.size() + startPlayersArray.guardedPlayer.size() +
+//                startPlayersArray.index + startPlayersArray.werewolves.size(), Toast.LENGTH_LONG).show();
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                if (startPlayersArray.werewolves.size() > startPlayersArray.theData.size() - startPlayersArray.werewolves.size()) {
-//
-//                } else if (startPlayersArray.werewolves.size() == 0) {
-//
-//                } else {
+                if (startPlayersArray.werewolves.size() > startPlayersArray.theData.size() - startPlayersArray.werewolves.size()) {
+                    Intent intent = new Intent(killedPrompt.this, werewolfWin.class);
+                    startActivity(intent);
+                } else if (startPlayersArray.werewolves.size() == 0) {
+                    Intent intent = new Intent(killedPrompt.this, villagerWin.class);
+                    startActivity(intent);
+                } else {
+                startPlayersArray.killed.clear();
                     Intent intent = new Intent(killedPrompt.this, gameDiscussion.class);
                     startActivity(intent);
-//                }
+                }
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+
     }
 }

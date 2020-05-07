@@ -234,4 +234,9 @@ public class selectRoles extends AppCompatActivity {
         kncounter.setText(String.valueOf(kn));
         srcounter.setText(String.valueOf(sr));
     }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(selectRoles.this, playersPage.class);
+        startActivity(intent);
+    }
 }

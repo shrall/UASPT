@@ -17,9 +17,18 @@ import com.example.werewolf.model.startPlayersArray;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import static com.example.werewolf.model.startPlayersArray.eight;
+import static com.example.werewolf.model.startPlayersArray.five;
+import static com.example.werewolf.model.startPlayersArray.four;
+import static com.example.werewolf.model.startPlayersArray.one;
+import static com.example.werewolf.model.startPlayersArray.seven;
+import static com.example.werewolf.model.startPlayersArray.six;
+import static com.example.werewolf.model.startPlayersArray.three;
+import static com.example.werewolf.model.startPlayersArray.two;
+
 public class finishTurn extends AppCompatActivity {
     Button next;
-    int one = 0, two = 0, three = 0, four = 0, five = 0, six = 0, seven = 0, eight = 0, dead = 0;
+    int one = 0, two = 0, three = 0, four = 0, five = 0, six = 0, seven = 0, eight = 0, dead = 0, most = 0, cancel = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +78,145 @@ public class finishTurn extends AppCompatActivity {
                 }
             }
         }
+
+        if (one > most) {
+            most = one;
+            if (two > most) {
+                most = two;
+                if (three > most) {
+                    most = three;
+                    if (four > most) {
+                        most = four;
+                        if (five > most) {
+                            most = five;
+                            if (six > most) {
+                                most = six;
+                                if (seven > most) {
+                                    most = seven;
+                                    if (eight > most) {
+                                        most = eight;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } else if (two > most) {
+            most = two;
+            if (three > most) {
+                most = three;
+                if (four > most) {
+                    most = four;
+                    if (five > most) {
+                        most = five;
+                        if (six > most) {
+                            most = six;
+                            if (seven > most) {
+                                most = seven;
+                                if (eight > most) {
+                                    most = eight;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } else if (three > most) {
+            most = three;
+            if (four > most) {
+                most = four;
+                if (five > most) {
+                    most = five;
+                    if (six > most) {
+                        most = six;
+                        if (seven > most) {
+                            most = seven;
+                            if (eight > most) {
+                                most = eight;
+                            }
+                        }
+                    }
+                }
+            }
+        } else if (four > most) {
+            most = four;
+            if (five > most) {
+                most = five;
+                if (six > most) {
+                    most = six;
+                    if (seven > most) {
+                        most = seven;
+                        if (eight > most) {
+                            most = eight;
+                        }
+                    }
+                }
+            }
+        } else if (five > most) {
+            most = five;
+            if (six > most) {
+                most = six;
+                if (seven > most) {
+                    most = seven;
+                    if (eight > most) {
+                        most = eight;
+                    }
+                }
+            }
+        } else if (six > most) {
+            most = six;
+            if (seven > most) {
+                most = seven;
+                if (eight > most) {
+                    most = eight;
+                }
+            }
+        } else if (seven > most) {
+            most = seven;
+            if (eight > most) {
+                most = eight;
+            }
+        } else if (eight > most) {
+            most = eight;
+        }
+
+        if (one == two || one == three || one == four || one == five | one == six || one == seven || one == eight) {
+            if (one == most) {
+                dead = 0;
+            }
+        }
+        if (two == three || two == four || two == five | two == six || two == seven || two == eight) {
+            if (two == most) {
+                dead = 1;
+            }
+        }
+        if (three == four || three == five | three == six || three == seven || three == eight) {
+            if (three == most) {
+                dead = 2;
+            }
+        }
+        if (four == five | four == six || four == seven || four == eight) {
+            if (four == most) {
+                dead = 3;
+            }
+        }
+        if (five == six || five == seven || five == eight) {
+            if (five == most) {
+                dead = 4;
+            }
+        }
+        if (six == seven || six == eight) {
+            if (six == most) {
+                dead = 5;
+            }
+        }
+        if (seven == eight) {
+            if (seven == most) {
+                dead = 6;
+            }
+        }
+
 
         if (one > two && one > three && one > four && one > five && one > six && one > seven && one > eight) {
             dead = 0;
@@ -157,5 +305,9 @@ public class finishTurn extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+
     }
 }

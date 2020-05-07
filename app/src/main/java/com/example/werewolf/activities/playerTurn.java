@@ -166,4 +166,8 @@ public class playerTurn extends AppCompatActivity {
             startActivity(intent);
         }
     }
+    @Override
+    public void onBackPressed() {
+
+    }
 }

@@ -54,4 +54,8 @@ public class seerAction extends AppCompatActivity {
         });
 
     }
+    @Override
+    public void onBackPressed() {
+
+    }
 }

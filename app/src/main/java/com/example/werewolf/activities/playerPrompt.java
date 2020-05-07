@@ -18,8 +18,6 @@ public class playerPrompt extends AppCompatActivity {
 
     TextView playerName;
     ImageView playerImage;
-    String playername, playerrole;
-    Uri playerimg;
     startPlayers p;
     Button btreveal;
     Integer index;
@@ -47,6 +45,9 @@ public class playerPrompt extends AppCompatActivity {
         });
 
 
+    }
+    @Override
+    public void onBackPressed() {
 
     }
 }

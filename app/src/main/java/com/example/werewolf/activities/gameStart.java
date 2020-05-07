@@ -118,10 +118,10 @@ public class gameStart extends AppCompatActivity {
 //                if (startPlayersArray.declareRole == 2) {
                 Intent intent = new Intent(gameStart.this, playerPrompt.class);
                 startActivity(intent);
-                Toast.makeText(gameStart.this, String.valueOf(startPlayersArray.theData.size())
-                        + startPlayersArray.killed.size() + startPlayersArray.killedPlayer.size() +
-                        startPlayersArray.huntedPlayer.size() + startPlayersArray.guardedPlayer.size() +
-                        startPlayersArray.index + startPlayersArray.werewolves.size(), Toast.LENGTH_LONG).show();
+//                Toast.makeText(gameStart.this, String.valueOf(startPlayersArray.theData.size())
+//                        + startPlayersArray.killed.size() + startPlayersArray.killedPlayer.size() +
+//                        startPlayersArray.huntedPlayer.size() + startPlayersArray.guardedPlayer.size() +
+//                        startPlayersArray.index + startPlayersArray.werewolves.size(), Toast.LENGTH_LONG).show();
 //                }
 //                else {
 //                    Toast.makeText(gameStart.this, String.valueOf(startPlayersArray.theData.size())
@@ -138,5 +138,9 @@ public class gameStart extends AppCompatActivity {
     public static double getRandomIntegerBetweenRange(double min, double max) {
         double x = (int) (Math.random() * ((max - min) + 1)) + min;
         return x;
+    }
+    @Override
+    public void onBackPressed() {
+
     }
 }
