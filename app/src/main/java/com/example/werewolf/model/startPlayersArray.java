@@ -18,4 +18,5 @@ public class startPlayersArray {
     public static Integer declareRole = 0;
     public static String seered = "";
     public static String seeredplayer = "";
+    public static int one = 0, two = 0, three = 0, four = 0, five = 0, six = 0, seven = 0, eight = 0, dead = 0;
 }

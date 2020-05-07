@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.gameVoting"></activity>
+        <activity android:name=".activities.finishVote"></activity>
+        <activity android:name=".activities.gameVoting" />
         <activity android:name=".activities.gameDiscussion" />
         <activity android:name=".activities.killedPrompt" />
         <activity android:name=".activities.finishTurn" />

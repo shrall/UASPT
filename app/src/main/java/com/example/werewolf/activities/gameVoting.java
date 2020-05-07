@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,8 +24,9 @@ public class gameVoting extends AppCompatActivity {
 
     TextView actionedPlayer, votingPlayer;
     ImageView votingPlayerImg;
-    ArrayList<Players>  thePlayers;
+    ArrayList<Players> thePlayers;
     Button nextVote;
+    int voteCounter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +47,41 @@ public class gameVoting extends AppCompatActivity {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                 actionedPlayer.setText(thePlayers.get(position).getPname());
+                voteCounter = position;
             }
         });
 
+        if (voteCounter == 0) {
+            startPlayersArray.one++;
+        } else if (voteCounter == 1) {
+            startPlayersArray.two++;
+        } else if (voteCounter == 2) {
+            startPlayersArray.three++;
+        } else if (voteCounter == 3) {
+            startPlayersArray.four++;
+        } else if (voteCounter == 4) {
+            startPlayersArray.five++;
+        } else if (voteCounter == 5) {
+            startPlayersArray.six++;
+        } else if (voteCounter == 6) {
+            startPlayersArray.seven++;
+        } else if (voteCounter == 7) {
+            startPlayersArray.eight++;
+        }
 
-
-
+        nextVote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (startPlayersArray.index + 1 < startPlayersArray.theData.size()) {
+                    startPlayersArray.index++;
+                    Intent intent = new Intent(gameVoting.this, gameVoting.class);
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(gameVoting.this, finishVote.class);
+                    startActivity(intent);
+                }
+            }
+        });
 
 
     }
