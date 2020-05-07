@@ -68,7 +68,6 @@ public class playerTurn extends AppCompatActivity {
         for (int i = 0; i < startPlayersArray.huntered.size(); i++) {
             if (player.equals(startPlayersArray.huntered.get(i))) {
                 actionbtn.setVisibility(View.GONE);
-                actionbtn2.setVisibility(View.VISIBLE);
                 actionbtn2.setText("Done");
             }
         }
@@ -87,6 +86,8 @@ public class playerTurn extends AppCompatActivity {
         } else if (rolestring.equals("ht")) {
             actionbtn.setText(R.string.actionkill);
             roleName.setText(R.string.roleht);
+            actionbtn2.setVisibility(View.VISIBLE);
+            actionbtn2.setText(R.string.skip);
         } else if (rolestring.equals("vg")) {
             actionbtn.setText(R.string.actiondone);
             roleName.setText(R.string.rolevg);
@@ -123,12 +124,20 @@ public class playerTurn extends AppCompatActivity {
                         startPlayersArray.guardedPlayer.add(actionedplayer);
                         nextTurn();
                     } else if (rolestring.equals("ht")) {
-                        startPlayersArray.huntered.add(player);
-                        startPlayersArray.huntedPlayer.add(actionedplayer);
-                        nextTurn();
+                        if (actionedplayer.equals(player)) {
+                            Toast.makeText(playerTurn.this, "You can't kill yourself!", Toast.LENGTH_SHORT).show();
+                        } else {
+                            startPlayersArray.huntered.add(player);
+                            startPlayersArray.huntedPlayer.add(actionedplayer);
+                            nextTurn();
+                        }
                     } else if (rolestring.equals("sr")) {
-                        Intent intent = new Intent(playerTurn.this, seerAction.class);
-                        startActivity(intent);
+                        if (actionedplayer.equals(player)) {
+                            Toast.makeText(playerTurn.this, "You can't check yourself!", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Intent intent = new Intent(playerTurn.this, seerAction.class);
+                            startActivity(intent);
+                        }
                     } else {
                         nextTurn();
                     }

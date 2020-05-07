@@ -32,11 +32,11 @@ public class seerAction extends AppCompatActivity {
         } else if (prole.equals("ww")) {
             playerrole.setText("Werewolf");
         } else if (prole.equals("ht")) {
-            playerrole.setText("Hunter");
+            playerrole.setText("Villager");
         } else if (prole.equals("sr")) {
-            playerrole.setText("The Seer");
+            playerrole.setText("Villager");
         } else if (prole.equals("kn")) {
-            playerrole.setText("Knight");
+            playerrole.setText("Villager");
         }
 
         confirm.setOnClickListener(new View.OnClickListener() {

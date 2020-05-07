@@ -36,5 +36,6 @@
     <string name="choose">Choose</string>
     <string name="is_a">is a</string>
     <string name="next">Next</string>
+    <string name="skip">Skip</string>
 
 </resources>

@@ -22,7 +22,7 @@ public class killedPrompt extends AppCompatActivity {
         name = "No one died!";
 
         for (int i = 0; i < startPlayersArray.killed.size(); i++) {
-            if (i==0){
+            if (i == 0) {
                 name = startPlayersArray.killed.get(i);
             } else {
                 name += "\n" + startPlayersArray.killed.get(i);
