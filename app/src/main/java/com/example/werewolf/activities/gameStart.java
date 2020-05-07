@@ -18,7 +18,7 @@ import com.example.werewolf.model.startPlayersArray;
 import java.util.ArrayList;
 
 public class gameStart extends AppCompatActivity {
-    int ww, vg, kn, sr, ht, roleselect, counter;
+    int ww, vg, kn, sr, ht, roleselect;
     String playername, playerrole;
     Uri playerimg;
     Players p;
@@ -30,89 +30,105 @@ public class gameStart extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_start);
         tb = findViewById(R.id.btn_reveal);
+        startPlayersArray.index = 0;
         ww = selectRoles.ww;
         sr = selectRoles.sr;
         ht = selectRoles.ht;
         vg = selectRoles.vg;
         kn = selectRoles.kn;
-        for (int i = 0; i < PlayersArray.theData.size(); i++) {
-            p = PlayersArray.theData.get(i);
-            playername = p.getPname();
-            playerimg = p.getPimg();
-            roleselect = (int) getRandomIntegerBetweenRange(1, 3);
-            if (roleselect == 1) {
-                if (ww >= 1) {
-                    playerrole = "ww";
-                    ww--;
-                } else if (vg >= 1) {
-                    playerrole = "vg";
-                    vg--;
-                } else if (sr >= 1) {
-                    playerrole = "sr";
-                    sr--;
-                } else if (kn >= 1) {
-                    playerrole = "kn";
-                    kn--;
-                } else if (ht >= 1) {
-                    playerrole = "ht";
-                    ht--;
+        if (startPlayersArray.declareRole == 0) {
+            for (int i = 0; i < PlayersArray.theData.size(); i++) {
+                p = PlayersArray.theData.get(i);
+                playername = p.getPname();
+                playerimg = p.getPimg();
+                roleselect = (int) getRandomIntegerBetweenRange(1, 3);
+                if (roleselect == 1) {
+                    if (ww >= 1) {
+                        playerrole = "ww";
+                        ww--;
+                    } else if (vg >= 1) {
+                        playerrole = "vg";
+                        vg--;
+                    } else if (sr >= 1) {
+                        playerrole = "sr";
+                        sr--;
+                    } else if (kn >= 1) {
+                        playerrole = "kn";
+                        kn--;
+                    } else if (ht >= 1) {
+                        playerrole = "ht";
+                        ht--;
+                    }
+                } else if (roleselect == 2) {
+                    if (sr >= 1) {
+                        playerrole = "sr";
+                        sr--;
+                    } else if (ht >= 1) {
+                        playerrole = "ht";
+                        ht--;
+                    } else if (ww >= 1) {
+                        playerrole = "ww";
+                        ww--;
+                    } else if (kn >= 1) {
+                        playerrole = "kn";
+                        kn--;
+                    } else if (vg >= 1) {
+                        playerrole = "vg";
+                        vg--;
+                    }
+                } else if (roleselect == 3) {
+                    if (vg >= 1) {
+                        playerrole = "vg";
+                        vg--;
+                    } else if (ht >= 1) {
+                        playerrole = "ht";
+                        ht--;
+                    } else if (kn >= 1) {
+                        playerrole = "kn";
+                        kn--;
+                    } else if (sr >= 1) {
+                        playerrole = "sr";
+                        sr--;
+                    } else if (ww >= 1) {
+                        playerrole = "ww";
+                        ww--;
+                    }
                 }
-            } else if (roleselect == 2) {
-                if (sr >= 1) {
-                    playerrole = "sr";
-                    sr--;
-                } else if (ht >= 1) {
-                    playerrole = "ht";
-                    ht--;
-                } else if (ww >= 1) {
-                    playerrole = "ww";
-                    ww--;
-                } else if (kn >= 1) {
-                    playerrole = "kn";
-                    kn--;
-                } else if (vg >= 1) {
-                    playerrole = "vg";
-                    vg--;
-                }
-            } else if (roleselect == 3) {
-                if (vg >= 1) {
-                    playerrole = "vg";
-                    vg--;
-                } else if (ht >= 1) {
-                    playerrole = "ht";
-                    ht--;
-                } else if (kn >= 1) {
-                    playerrole = "kn";
-                    kn--;
-                } else if (sr >= 1) {
-                    playerrole = "sr";
-                    sr--;
-                } else if (ww >= 1) {
-                    playerrole = "ww";
-                    ww--;
-                }
+                startPlayersArray.theData.add(new startPlayers(playername, playerrole, playerimg));
             }
-            startPlayersArray.theData.add(new startPlayers(playername, playerrole, playerimg));
+            startPlayersArray.declareRole++;
         }
         dePlayers = startPlayersArray.theData;
 
-        for (int i = 0; i < dePlayers.size(); i++) {
-            if (dePlayers.get(i).getSrole().equals("ww")) {
-                startPlayersArray.werewolves.add(dePlayers.get(i).getSname());
-//                Toast.makeText(gameStart.this, startPlayersArray.werewolves.get(counter), Toast.LENGTH_SHORT).show();
-                counter++;
-            } else {
 
+        if (startPlayersArray.declareRole == 1) {
+            for (int i = 0; i < dePlayers.size(); i++) {
+                if (dePlayers.get(i).getSrole().equals("ww")) {
+                    startPlayersArray.werewolves.add(dePlayers.get(i).getSname());
+                } else {
+
+                }
             }
+            startPlayersArray.declareRole++;
         }
 
         tb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(gameStart.this, playerPrompt.class);
-                startActivity(intent);
+//                if (startPlayersArray.declareRole == 2) {
+                    Intent intent = new Intent(gameStart.this, playerPrompt.class);
+                    startActivity(intent);
+                    startPlayersArray.declareRole++;
+//                }
+//                else {
+//                    Toast.makeText(gameStart.this, String.valueOf(startPlayersArray.theData.size())
+//                            + startPlayersArray.killed.size() + startPlayersArray.killedPlayer.size() +
+//                            startPlayersArray.huntedPlayer.size() + startPlayersArray.guardedPlayer.size() +
+//                            startPlayersArray.index + startPlayersArray.werewolves.size(), Toast.LENGTH_SHORT).show();
+//                }
             }
         });
+
     }
 
 

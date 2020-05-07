@@ -15,6 +15,7 @@ public class startPlayersArray {
     //buat ngasih tau siapa aja yg dibunuh
     public static ArrayList<String> killed = new ArrayList<>();
     public static Integer index = 0;
+    public static Integer declareRole = 0;
     public static String seered = "";
     public static String seeredplayer = "";
 }

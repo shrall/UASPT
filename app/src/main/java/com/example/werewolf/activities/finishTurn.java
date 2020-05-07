@@ -88,15 +88,23 @@ public class finishTurn extends AppCompatActivity {
         }
 
         if (startPlayersArray.killedPlayer.size() != 0) {
-                Iterator<startPlayers> iter = startPlayersArray.theData.iterator();
-                while (iter.hasNext()) {
-                    startPlayers user = iter.next();
-                    if (user.equals(startPlayersArray.theData.get(dead))) {
-                        startPlayersArray.killed.add(user.sname);
-                        iter.remove();
-                        break;
-                    }
+            Iterator<Players> iter1 = PlayersArray.theData.iterator();
+            while (iter1.hasNext()) {
+                Players user = iter1.next();
+                if (user.pname.equals(startPlayersArray.theData.get(dead).getSname())) {
+                    iter1.remove();
+                    break;
                 }
+            }
+            Iterator<startPlayers> iter = startPlayersArray.theData.iterator();
+            while (iter.hasNext()) {
+                startPlayers user = iter.next();
+                if (user.equals(startPlayersArray.theData.get(dead))) {
+                    startPlayersArray.killed.add(user.sname);
+                    iter.remove();
+                    break;
+                }
+            }
 
         }
         if (startPlayersArray.huntedPlayer.size() != 0) {
@@ -109,12 +117,27 @@ public class finishTurn extends AppCompatActivity {
                         iter.remove();
                     }
                 }
+                Iterator<Players> iter1 = PlayersArray.theData.iterator();
+                while (iter1.hasNext()) {
+                    Players user = iter1.next();
+                    if (user.pname.equals(startPlayersArray.huntedPlayer.get(i))) {
+                        iter1.remove();
+                    }
+                }
             }
         }
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                one = 0; two = 0; three = 0; four = 0; five = 0; six = 0; seven = 0; eight = 0; dead = 0;
+                one = 0;
+                two = 0;
+                three = 0;
+                four = 0;
+                five = 0;
+                six = 0;
+                seven = 0;
+                eight = 0;
+                dead = 0;
                 startPlayersArray.killedPlayer.clear();
                 startPlayersArray.guardedPlayer.clear();
                 startPlayersArray.huntedPlayer.clear();

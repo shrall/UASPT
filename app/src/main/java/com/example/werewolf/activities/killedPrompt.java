@@ -2,7 +2,10 @@ package com.example.werewolf.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,12 +16,14 @@ public class killedPrompt extends AppCompatActivity {
 
     TextView names;
     String name;
+    Button next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_killed_prompt);
         names = findViewById(R.id.tvguide3);
+        next = findViewById(R.id.btn_next);
         name = "No one died!";
 
         for (int i = 0; i < startPlayersArray.killed.size(); i++) {
@@ -30,6 +35,13 @@ public class killedPrompt extends AppCompatActivity {
         }
         names.setText(name);
         startPlayersArray.killed.clear();
-        Toast.makeText(killedPrompt.this, String.valueOf(startPlayersArray.theData.size()), Toast.LENGTH_SHORT).show();
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(killedPrompt.this, gameDiscussion.class);
+                startActivity(intent);
+            }
+        });
     }
 }
