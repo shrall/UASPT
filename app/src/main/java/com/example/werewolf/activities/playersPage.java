@@ -97,5 +97,5 @@ public class playersPage extends AppCompatActivity {
 
 //        Toast.makeText(MainActivity.this, "Press back again to exit.", Toast.LENGTH_SHORT).show();
     }
-    
+
 }

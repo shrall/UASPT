@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.werewolf.R;
@@ -14,6 +15,7 @@ import com.example.werewolf.model.startPlayersArray;
 public class seerAction extends AppCompatActivity {
 
     TextView playername, playerrole;
+    ImageView seeredroleimg;
     String pname,prole;
     Button confirm;
 
@@ -21,6 +23,7 @@ public class seerAction extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seer_action);
+        seeredroleimg = findViewById(R.id.ivplayerrole);
         playername = findViewById(R.id.playerseeredname);
         playerrole = findViewById(R.id.playerseeredrolename);
         confirm = findViewById(R.id.confirmactionbtn);
@@ -29,14 +32,19 @@ public class seerAction extends AppCompatActivity {
         playername.setText(pname);
         if (prole.equals("vg")) {
             playerrole.setText("Villager");
+            seeredroleimg.setImageDrawable(getDrawable(R.drawable.vilagerborder));
         } else if (prole.equals("ww")) {
             playerrole.setText("Werewolf");
+            seeredroleimg.setImageDrawable(getDrawable(R.drawable.wolfborder));
         } else if (prole.equals("ht")) {
             playerrole.setText("Villager");
+            seeredroleimg.setImageDrawable(getDrawable(R.drawable.vilagerborder));
         } else if (prole.equals("sr")) {
             playerrole.setText("Villager");
+            seeredroleimg.setImageDrawable(getDrawable(R.drawable.vilagerborder));
         } else if (prole.equals("kn")) {
             playerrole.setText("Villager");
+            seeredroleimg.setImageDrawable(getDrawable(R.drawable.vilagerborder));
         }
 
         confirm.setOnClickListener(new View.OnClickListener() {

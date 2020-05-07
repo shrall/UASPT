@@ -30,7 +30,7 @@
         android:layout_marginTop="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rolesToolbar"
-        app:srcCompat="@drawable/mainmenubtn" />
+        app:srcCompat="@drawable/wolfborder" />
 
     <ImageView
         android:id="@+id/iv_vg"
@@ -42,7 +42,7 @@
         app:layout_constraintHorizontal_bias="0.38"
         app:layout_constraintStart_toEndOf="@+id/iv_ww"
         app:layout_constraintTop_toBottomOf="@+id/rolesToolbar"
-        app:srcCompat="@drawable/mainmenubtn" />
+        app:srcCompat="@drawable/vilagerborder" />
 
     <Button
         android:id="@+id/btn_plusvg"
@@ -259,7 +259,7 @@
         app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sprole"
-        app:srcCompat="@drawable/mainmenubtn" />
+        app:srcCompat="@drawable/seerborder" />
 
     <ImageView
         android:id="@+id/iv_knight"
@@ -269,7 +269,7 @@
         app:layout_constraintEnd_toStartOf="@+id/iv_hunter"
         app:layout_constraintStart_toEndOf="@+id/iv_seer"
         app:layout_constraintTop_toBottomOf="@+id/sprole"
-        app:srcCompat="@drawable/mainmenubtn" />
+        app:srcCompat="@drawable/shieldborder" />
 
     <ImageView
         android:id="@+id/iv_hunter"
@@ -280,7 +280,7 @@
         app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sprole"
-        app:srcCompat="@drawable/mainmenubtn" />
+        app:srcCompat="@drawable/bow" />
 
     <Button
         android:id="@+id/btn_plushunter"

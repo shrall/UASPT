@@ -26,6 +26,7 @@ import java.util.ArrayList;
 public class playerTurn extends AppCompatActivity {
     int ct;
     TextView roleName, playerNameAction, playerFriends;
+    ImageView playerroleimg;
     String rolestring, actionedplayer, actionedplayerrole;
     String friends = "Werewolf : ";
     String player;
@@ -40,6 +41,7 @@ public class playerTurn extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_turn);
+        playerroleimg = findViewById(R.id.ivplayerrole);
         playerNameAction = findViewById(R.id.playernameaction);
         actionbtn = findViewById(R.id.confirmactionbtn);
         playerFriends = findViewById(R.id.playerfriends);
@@ -77,20 +79,25 @@ public class playerTurn extends AppCompatActivity {
             playerFriends.setText(friends);
             actionbtn.setText(R.string.actionkill);
             roleName.setText(R.string.roleww);
+            playerroleimg.setImageDrawable(getDrawable(R.drawable.wolfborder));
         } else if (rolestring.equals("sr")) {
             actionbtn.setText(R.string.actionselect);
             roleName.setText(R.string.rolesr);
+            playerroleimg.setImageDrawable(getDrawable(R.drawable.seerborder));
         } else if (rolestring.equals("kn")) {
             actionbtn.setText(R.string.actionguard);
             roleName.setText(R.string.roleknight);
+            playerroleimg.setImageDrawable(getDrawable(R.drawable.shieldborder));
         } else if (rolestring.equals("ht")) {
             actionbtn.setText(R.string.actionkill);
             roleName.setText(R.string.roleht);
             actionbtn2.setVisibility(View.VISIBLE);
             actionbtn2.setText(R.string.skip);
+            playerroleimg.setImageDrawable(getDrawable(R.drawable.bow));
         } else if (rolestring.equals("vg")) {
             actionbtn.setText(R.string.actiondone);
             roleName.setText(R.string.rolevg);
+            playerroleimg.setImageDrawable(getDrawable(R.drawable.vilagerborder));
         }
 
 
