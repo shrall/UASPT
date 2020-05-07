@@ -69,6 +69,7 @@ public class finishTurn extends AppCompatActivity {
                 }
             }
         }
+
         if (one > two && one > three && one > four && one > five && one > six && one > seven && one > eight) {
             dead = 0;
         } else if (two > one && two > three && two > four && two > five && two > six && two > seven && two > eight) {
@@ -122,6 +123,13 @@ public class finishTurn extends AppCompatActivity {
                     Players user = iter1.next();
                     if (user.pname.equals(startPlayersArray.huntedPlayer.get(i))) {
                         iter1.remove();
+                    }
+                }
+                Iterator<String> iter2 = startPlayersArray.werewolves.iterator();
+                while (iter2.hasNext()) {
+                    String user = iter2.next();
+                    if (user.equals(startPlayersArray.huntedPlayer.get(i))) {
+                        iter2.remove();
                     }
                 }
             }

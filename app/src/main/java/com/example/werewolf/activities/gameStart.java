@@ -116,9 +116,12 @@ public class gameStart extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 //                if (startPlayersArray.declareRole == 2) {
-                    Intent intent = new Intent(gameStart.this, playerPrompt.class);
-                    startActivity(intent);
-                    startPlayersArray.declareRole++;
+                Intent intent = new Intent(gameStart.this, playerPrompt.class);
+                startActivity(intent);
+                Toast.makeText(gameStart.this, String.valueOf(startPlayersArray.theData.size())
+                        + startPlayersArray.killed.size() + startPlayersArray.killedPlayer.size() +
+                        startPlayersArray.huntedPlayer.size() + startPlayersArray.guardedPlayer.size() +
+                        startPlayersArray.index + startPlayersArray.werewolves.size(), Toast.LENGTH_LONG).show();
 //                }
 //                else {
 //                    Toast.makeText(gameStart.this, String.valueOf(startPlayersArray.theData.size())

@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.werewolf.R;
+import com.example.werewolf.model.startPlayersArray;
 
 import java.util.concurrent.TimeUnit;
 
@@ -31,7 +32,9 @@ public class gameDiscussion extends AppCompatActivity {
 
             public void onTick(long millisUntilFinished) {
 
-                text1.setText("" + String.format(FORMAT, TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millisUntilFinished)), TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
+                text1.setText(""+String.format(FORMAT,
+                        TimeUnit.MILLISECONDS.toMinutes( millisUntilFinished),
+                        TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
             }
 
             public void onFinish() {
@@ -43,8 +46,9 @@ public class gameDiscussion extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(gameDiscussion.this, gameStart.class);
+                Intent intent = new Intent(gameDiscussion.this, gameVoting.class);
                 startActivity(intent);
+                startPlayersArray.index = 0;
             }
         });
     }

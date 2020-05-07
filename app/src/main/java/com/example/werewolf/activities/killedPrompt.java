@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.werewolf.R;
+import com.example.werewolf.model.PlayersArray;
 import com.example.werewolf.model.startPlayersArray;
 
 public class killedPrompt extends AppCompatActivity {
@@ -36,11 +37,22 @@ public class killedPrompt extends AppCompatActivity {
         names.setText(name);
         startPlayersArray.killed.clear();
 
+        Toast.makeText(this, String.valueOf(startPlayersArray.theData.size())
+                + PlayersArray.theData.size() + startPlayersArray.killed.size() + startPlayersArray.killedPlayer.size() +
+                startPlayersArray.huntedPlayer.size() + startPlayersArray.guardedPlayer.size() +
+                startPlayersArray.index + startPlayersArray.werewolves.size(), Toast.LENGTH_LONG).show();
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(killedPrompt.this, gameDiscussion.class);
-                startActivity(intent);
+//                if (startPlayersArray.werewolves.size() > startPlayersArray.theData.size() - startPlayersArray.werewolves.size()) {
+//
+//                } else if (startPlayersArray.werewolves.size() == 0) {
+//
+//                } else {
+                    Intent intent = new Intent(killedPrompt.this, gameDiscussion.class);
+                    startActivity(intent);
+//                }
             }
         });
     }
