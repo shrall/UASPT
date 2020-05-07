@@ -37,6 +37,6 @@ public class werewolfWin extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-
+        finish();
     }
 }

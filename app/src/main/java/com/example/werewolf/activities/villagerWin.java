@@ -36,6 +36,6 @@ public class villagerWin extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-
+        finish();
     }
 }
