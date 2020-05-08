@@ -42,7 +42,7 @@
                 android:layout_width="110dp"
                 android:layout_height="155dp"
                 android:contentDescription="@string/player"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop" />
         </androidx.cardview.widget.CardView>
 
         <TextView
