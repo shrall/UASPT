@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainmenubg"
+    android:background="@drawable/mainmenuimg"
     tools:context=".activities.gameStart">
 
     <ImageView
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bgboard" />
 
-        <TextView
+    <TextView
         android:id="@+id/tvguide3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/iv_bgboard"
         app:layout_constraintTop_toTopOf="@+id/iv_bgboard"
-            app:layout_constraintVertical_bias="0.846" />
+        app:layout_constraintVertical_bias="0.846" />
 
     <TextView
         android:id="@+id/tvguide"

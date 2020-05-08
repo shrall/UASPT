@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainmenubg"
+    android:background="@drawable/mainmenuimg"
     tools:context=".activities.gameStart">
 
     <ImageView
@@ -31,9 +31,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
-        app:cardCornerRadius="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
         app:layout_constraintBottom_toTopOf="@+id/tvplayername"
         app:layout_constraintEnd_toEndOf="@+id/iv_bgboard"
         app:layout_constraintStart_toStartOf="@+id/iv_bgboard"
@@ -51,9 +51,9 @@
         android:id="@+id/tvplayername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/russo_one"
         android:text="@string/player"
         android:textColor="@android:color/white"
-        android:fontFamily="@font/russo_one"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_bgboard"
         app:layout_constraintEnd_toEndOf="@+id/iv_bgboard"

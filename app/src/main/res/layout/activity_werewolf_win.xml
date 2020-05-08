@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainmenubg"
+    android:background="@drawable/mainmenuimg"
     tools:context=".activities.gameStart">
 
     <ImageView
@@ -21,9 +21,9 @@
         android:id="@+id/tvguide"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/russo_one"
         android:text="Werewolf Wins!"
         android:textColor="@android:color/white"
-        android:fontFamily="@font/russo_one"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_bgboard"
         app:layout_constraintEnd_toEndOf="@+id/iv_bgboard"
@@ -38,8 +38,8 @@
         android:background="@drawable/btndarkmode"
         android:fontFamily="@font/russo_one"
         android:text="@string/start"
-        android:textSize="24sp"
         android:textColor="@android:color/white"
+        android:textSize="24sp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

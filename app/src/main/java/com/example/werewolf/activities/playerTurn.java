@@ -5,7 +5,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -79,25 +78,25 @@ public class playerTurn extends AppCompatActivity {
             playerFriends.setText(friends);
             actionbtn.setText(R.string.actionkill);
             roleName.setText(R.string.roleww);
-            playerroleimg.setImageDrawable(getDrawable(R.drawable.wolfborder));
+            playerroleimg.setImageDrawable(getDrawable(R.drawable.wolfrole));
         } else if (rolestring.equals("sr")) {
             actionbtn.setText(R.string.actionselect);
             roleName.setText(R.string.rolesr);
-            playerroleimg.setImageDrawable(getDrawable(R.drawable.seerborder));
+            playerroleimg.setImageDrawable(getDrawable(R.drawable.seerrole));
         } else if (rolestring.equals("kn")) {
             actionbtn.setText(R.string.actionguard);
             roleName.setText(R.string.roleknight);
-            playerroleimg.setImageDrawable(getDrawable(R.drawable.shieldborder));
+            playerroleimg.setImageDrawable(getDrawable(R.drawable.knightrole));
         } else if (rolestring.equals("ht")) {
             actionbtn.setText(R.string.actionkill);
             roleName.setText(R.string.roleht);
             actionbtn2.setVisibility(View.VISIBLE);
             actionbtn2.setText(R.string.skip);
-            playerroleimg.setImageDrawable(getDrawable(R.drawable.bow));
+            playerroleimg.setImageDrawable(getDrawable(R.drawable.hunterrole));
         } else if (rolestring.equals("vg")) {
             actionbtn.setText(R.string.actiondone);
             roleName.setText(R.string.rolevg);
-            playerroleimg.setImageDrawable(getDrawable(R.drawable.vilagerborder));
+            playerroleimg.setImageDrawable(getDrawable(R.drawable.villagerrole));
         }
 
 

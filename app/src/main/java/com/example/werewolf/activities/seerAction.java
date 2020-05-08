@@ -32,19 +32,19 @@ public class seerAction extends AppCompatActivity {
         playername.setText(pname);
         if (prole.equals("vg")) {
             playerrole.setText("Villager");
-            seeredroleimg.setImageDrawable(getDrawable(R.drawable.vilagerborder));
+            seeredroleimg.setImageDrawable(getDrawable(R.drawable.villagerrole));
         } else if (prole.equals("ww")) {
             playerrole.setText("Werewolf");
-            seeredroleimg.setImageDrawable(getDrawable(R.drawable.wolfborder));
+            seeredroleimg.setImageDrawable(getDrawable(R.drawable.wolfrole));
         } else if (prole.equals("ht")) {
             playerrole.setText("Villager");
-            seeredroleimg.setImageDrawable(getDrawable(R.drawable.vilagerborder));
+            seeredroleimg.setImageDrawable(getDrawable(R.drawable.villagerrole));
         } else if (prole.equals("sr")) {
             playerrole.setText("Villager");
-            seeredroleimg.setImageDrawable(getDrawable(R.drawable.vilagerborder));
+            seeredroleimg.setImageDrawable(getDrawable(R.drawable.villagerrole));
         } else if (prole.equals("kn")) {
             playerrole.setText("Villager");
-            seeredroleimg.setImageDrawable(getDrawable(R.drawable.vilagerborder));
+            seeredroleimg.setImageDrawable(getDrawable(R.drawable.villagerrole));
         }
 
         confirm.setOnClickListener(new View.OnClickListener() {
