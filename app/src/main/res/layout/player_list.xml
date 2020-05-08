@@ -7,8 +7,8 @@
     android:layout_width="120dp"
     android:layout_height="190dp"
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="5dp"
     android:focusable="true"
+    cardview:cardCornerRadius="15dp"
     android:background="@color/colorPrimary">
 
     <androidx.constraintlayout.widget.ConstraintLayout

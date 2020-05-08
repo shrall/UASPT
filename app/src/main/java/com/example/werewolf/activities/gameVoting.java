@@ -67,60 +67,64 @@ public class gameVoting extends AppCompatActivity {
         nextVote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (temp != PlayersArray.theData.get(startPlayersArray.index).getPname()) {
-                    if (startPlayersArray.index + 1 < startPlayersArray.theData.size()) {
-                        startPlayersArray.index++;
-                        if (voteCounter == 0) {
-                            startPlayersArray.one++;
-                        } else if (voteCounter == 1) {
-                            startPlayersArray.two++;
-                        } else if (voteCounter == 2) {
-                            startPlayersArray.three++;
-                        } else if (voteCounter == 3) {
-                            startPlayersArray.four++;
-                        } else if (voteCounter == 4) {
-                            startPlayersArray.five++;
-                        } else if (voteCounter == 5) {
-                            startPlayersArray.six++;
-                        } else if (voteCounter == 6) {
-                            startPlayersArray.seven++;
-                        } else if (voteCounter == 7) {
-                            startPlayersArray.eight++;
-                        }
+                if (temp != null) {
+                    if (temp != PlayersArray.theData.get(startPlayersArray.index).getPname()) {
+                        if (startPlayersArray.index + 1 < startPlayersArray.theData.size()) {
+                            startPlayersArray.index++;
+                            if (voteCounter == 0) {
+                                startPlayersArray.one++;
+                            } else if (voteCounter == 1) {
+                                startPlayersArray.two++;
+                            } else if (voteCounter == 2) {
+                                startPlayersArray.three++;
+                            } else if (voteCounter == 3) {
+                                startPlayersArray.four++;
+                            } else if (voteCounter == 4) {
+                                startPlayersArray.five++;
+                            } else if (voteCounter == 5) {
+                                startPlayersArray.six++;
+                            } else if (voteCounter == 6) {
+                                startPlayersArray.seven++;
+                            } else if (voteCounter == 7) {
+                                startPlayersArray.eight++;
+                            }
 
 //                        Toast.makeText(gameVoting.this, "" + one + two + three + four + five + six + seven + eight, Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(gameVoting.this, gameVoting.class);
-                        startActivity(intent);
-                    } else {
-                        if (voteCounter == 0) {
-                            startPlayersArray.one++;
-                        } else if (voteCounter == 1) {
-                            startPlayersArray.two++;
-                        } else if (voteCounter == 2) {
-                            startPlayersArray.three++;
-                        } else if (voteCounter == 3) {
-                            startPlayersArray.four++;
-                        } else if (voteCounter == 4) {
-                            startPlayersArray.five++;
-                        } else if (voteCounter == 5) {
-                            startPlayersArray.six++;
-                        } else if (voteCounter == 6) {
-                            startPlayersArray.seven++;
-                        } else if (voteCounter == 7) {
-                            startPlayersArray.eight++;
+                            Intent intent = new Intent(gameVoting.this, gameVoting.class);
+                            startActivity(intent);
+                        } else {
+                            if (voteCounter == 0) {
+                                startPlayersArray.one++;
+                            } else if (voteCounter == 1) {
+                                startPlayersArray.two++;
+                            } else if (voteCounter == 2) {
+                                startPlayersArray.three++;
+                            } else if (voteCounter == 3) {
+                                startPlayersArray.four++;
+                            } else if (voteCounter == 4) {
+                                startPlayersArray.five++;
+                            } else if (voteCounter == 5) {
+                                startPlayersArray.six++;
+                            } else if (voteCounter == 6) {
+                                startPlayersArray.seven++;
+                            } else if (voteCounter == 7) {
+                                startPlayersArray.eight++;
+                            }
+                            Intent intent = new Intent(gameVoting.this, finishVote.class);
+                            startActivity(intent);
                         }
-                        Intent intent = new Intent(gameVoting.this, finishVote.class);
-                        startActivity(intent);
+                    } else {
+                        Toast.makeText(gameVoting.this, "You can't vote yourself!", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(gameVoting.this, "You can't vote yourself!", Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(gameVoting.this, "Pick a player to vote!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
 
     }
+
     @Override
     public void onBackPressed() {
 
