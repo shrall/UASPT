@@ -60,8 +60,8 @@ public class mainmenu extends AppCompatActivity {
                 Intent a = new Intent(Intent.ACTION_MAIN);
                 a.addCategory(Intent.CATEGORY_HOME);
                 a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                finish();
                 startActivity(a);
+                finish();
             }
         });
     }
