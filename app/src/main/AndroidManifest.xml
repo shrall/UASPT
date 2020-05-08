@@ -28,7 +28,7 @@
         <activity android:name=".activities.settingsPage" />
         <activity android:name=".activities.rolesPage" />
         <activity android:name=".activities.playersPage" />
-        <activity android:name=".activities.mainmenu" />
+        <activity android:name=".activities.mainmenu"/>
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
