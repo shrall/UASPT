@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cv_player"
-    android:clickable="true"
-    android:foreground="?android:attr/selectableItemBackground"
     android:layout_width="120dp"
     android:layout_height="190dp"
-    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="8dp"
+    android:background="@color/colorPrimary"
+    android:clickable="true"
     android:focusable="true"
-    cardview:cardCornerRadius="15dp"
-    android:background="@color/colorPrimary">
+    android:foreground="?android:attr/selectableItemBackground"
+    cardview:cardCornerRadius="15dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -31,11 +32,11 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            cardview:cardCornerRadius="15dp"
             cardview:layout_constraintBottom_toBottomOf="@+id/player_img1"
             cardview:layout_constraintEnd_toEndOf="@+id/player_img1"
             cardview:layout_constraintStart_toStartOf="@+id/player_img1"
-            cardview:layout_constraintTop_toTopOf="@+id/player_img1"
-            cardview:cardCornerRadius="15dp">
+            cardview:layout_constraintTop_toTopOf="@+id/player_img1">
 
             <ImageView
                 android:id="@+id/player_imgprompt"

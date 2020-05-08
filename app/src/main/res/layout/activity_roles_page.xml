@@ -11,7 +11,7 @@
         android:id="@+id/btn_ww"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:background=""
+        android:background="@drawable/wolfrole"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
