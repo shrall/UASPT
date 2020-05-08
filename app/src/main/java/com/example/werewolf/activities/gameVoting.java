@@ -89,7 +89,6 @@ public class gameVoting extends AppCompatActivity {
                                 startPlayersArray.eight++;
                             }
 
-//                        Toast.makeText(gameVoting.this, "" + one + two + three + four + five + six + seven + eight, Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(gameVoting.this, gameVoting.class);
                             startActivity(intent);
                         } else {

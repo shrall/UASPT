@@ -32,17 +32,13 @@ public class playersAdapter extends RecyclerView.Adapter<playersAdapter.MyViewHo
         View view;
         LayoutInflater pInflater = LayoutInflater.from(pContext);
         view = pInflater.inflate(R.layout.player_list, parent, false);
-
-
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
         holder.player_name.setText(pData.get(position).getPname());
         holder.player_img.setImageURI(pData.get(position).getPimg());
-
     }
 
     @Override
@@ -59,8 +55,6 @@ public class playersAdapter extends RecyclerView.Adapter<playersAdapter.MyViewHo
             super(itemView);
             player_name = itemView.findViewById(R.id.player_name);
             player_img = itemView.findViewById(R.id.player_imgprompt);
-
-
         }
     }
 

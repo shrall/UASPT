@@ -23,7 +23,6 @@ public class werewolfWin extends AppCompatActivity {
         setContentView(R.layout.activity_werewolf_win);
         congrats = findViewById(R.id.tvguide);
         btn = findViewById(R.id.btn_reveal);
-
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
