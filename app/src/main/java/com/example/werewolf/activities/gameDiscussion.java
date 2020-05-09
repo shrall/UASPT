@@ -17,6 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class gameDiscussion extends AppCompatActivity {
     TextView text1;
     Button button;
+    CountDownTimer cdTimer;
 
     private static final String FORMAT = "%02d:%02d";
 
@@ -28,7 +29,7 @@ public class gameDiscussion extends AppCompatActivity {
         text1 = findViewById(R.id.tvguide3);
         button = findViewById(R.id.btn_next);
 
-        new CountDownTimer(30000, 1000) { // adjust the milli seconds here
+        cdTimer = new CountDownTimer(30000, 1000) { // adjust the milli seconds here
 
             public void onTick(long millisUntilFinished) {
 
@@ -41,6 +42,8 @@ public class gameDiscussion extends AppCompatActivity {
                 Intent intent = new Intent(gameDiscussion.this, gameVoting.class);
                 startPlayersArray.index = 0;
                 startActivity(intent);
+                cdTimer.cancel();
+                finish();
             }
         }.start();
 
@@ -50,6 +53,8 @@ public class gameDiscussion extends AppCompatActivity {
                 Intent intent = new Intent(gameDiscussion.this, gameVoting.class);
                 startPlayersArray.index = 0;
                 startActivity(intent);
+                cdTimer.cancel();
+                finish();
             }
         });
     }
