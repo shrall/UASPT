@@ -260,10 +260,10 @@ public class finishVote extends AppCompatActivity {
                 eight = 0;
 //                Toast.makeText(finishVote.this, ""+most+cancel+dead+one+two+three+four+five+six+seven+eight, Toast.LENGTH_SHORT).show();
                 if (startPlayersArray.werewolves.size() == 0) {
-                    Intent intent = new Intent(finishVote.this, werewolfWin.class);
+                    Intent intent = new Intent(finishVote.this, villagerWin.class);
                     startActivity(intent);
                 } else if (startPlayersArray.werewolves.size() > startPlayersArray.theData.size() - startPlayersArray.werewolves.size()) {
-                    Intent intent = new Intent(finishVote.this, villagerWin.class);
+                    Intent intent = new Intent(finishVote.this, werewolfWin.class);
                     startActivity(intent);
                 } else {
                     Intent intent = new Intent(finishVote.this, gameStart.class);
