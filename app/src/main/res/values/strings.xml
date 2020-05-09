@@ -40,5 +40,6 @@
     <string name="discuss1">It\'s time to discuss.\n Who is the werewolf?</string>
     <string name="vote">Vote</string>
     <string name="roles">Roles</string>
+    <string name="finish">finish</string>
 
 </resources>

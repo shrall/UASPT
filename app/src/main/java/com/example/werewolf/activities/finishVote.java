@@ -263,7 +263,7 @@ public class finishVote extends AppCompatActivity {
                 if (startPlayersArray.werewolves.size() == 0) {
                     Intent intent = new Intent(finishVote.this, villagerWin.class);
                     startActivity(intent);
-                } else if (startPlayersArray.werewolves.size() > startPlayersArray.theData.size() - startPlayersArray.werewolves.size()) {
+                } else if (startPlayersArray.werewolves.size() == startPlayersArray.theData.size()) {
                     Intent intent = new Intent(finishVote.this, werewolfWin.class);
                     startActivity(intent);
                 } else {

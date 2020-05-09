@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/iv_bgboard"
-        android:layout_width="350dp"
-        android:layout_height="600dp"
+        android:layout_width="403dp"
+        android:layout_height="609dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,8 +27,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_bgboard"
         app:layout_constraintEnd_toEndOf="@+id/iv_bgboard"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="@+id/iv_bgboard"
-        app:layout_constraintTop_toTopOf="@+id/iv_bgboard" />
+        app:layout_constraintTop_toTopOf="@+id/iv_bgboard"
+        app:layout_constraintVertical_bias="0.192" />
 
     <Button
         android:id="@+id/btn_reveal"
@@ -37,13 +39,29 @@
         android:layout_marginBottom="44dp"
         android:background="@drawable/btndarkmode"
         android:fontFamily="@font/russo_one"
-        android:text="@string/start"
+        android:text="@string/finish"
         android:textColor="@android:color/white"
         android:textSize="24sp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvguide" />
+        app:layout_constraintTop_toBottomOf="@+id/tvguide"
+        app:layout_constraintVertical_bias="0.765" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/myrv"
+        android:layout_width="399dp"
+        android:layout_height="287dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="267dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="29dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_reveal"
+        app:layout_constraintEnd_toEndOf="@+id/iv_bgboard"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/iv_bgboard"
+        app:layout_constraintTop_toBottomOf="@+id/tvguide"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -45,7 +45,7 @@ public class killedPrompt extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (startPlayersArray.werewolves.size() > startPlayersArray.theData.size() - startPlayersArray.werewolves.size()) {
+                if (startPlayersArray.werewolves.size() == startPlayersArray.theData.size()) {
                     Intent intent = new Intent(killedPrompt.this, werewolfWin.class);
                     startActivity(intent);
                 } else if (startPlayersArray.werewolves.size() == 0) {
