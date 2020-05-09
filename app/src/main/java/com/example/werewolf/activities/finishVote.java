@@ -220,6 +220,13 @@ public class finishVote extends AppCompatActivity {
             votedPlayerImg.setImageURI(startPlayersArray.theData.get(dead).getSimg());
             votedPlayer.setText(startPlayersArray.theData.get(dead).getSname());
             guide2.setText("Any last words?");
+            Iterator<String> iter2 = startPlayersArray.werewolves.iterator();
+            while (iter2.hasNext()) {
+                String user = iter2.next();
+                if (user.equals(startPlayersArray.theData.get(dead).getSname())) {
+                    iter2.remove();
+                }
+            }
             Iterator<Players> iter1 = PlayersArray.theData.iterator();
             while (iter1.hasNext()) {
                 Players user = iter1.next();
@@ -236,13 +243,7 @@ public class finishVote extends AppCompatActivity {
                     break;
                 }
             }
-            Iterator<String> iter2 = startPlayersArray.werewolves.iterator();
-            while (iter2.hasNext()) {
-                String user = iter2.next();
-                if (user.equals(startPlayersArray.theData.get(dead).getSname())) {
-                    iter2.remove();
-                }
-            }
+
         }
         button.setOnClickListener(new View.OnClickListener() {
             @Override
