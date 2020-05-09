@@ -61,7 +61,8 @@ public class mainmenu extends AppCompatActivity {
                 a.addCategory(Intent.CATEGORY_HOME);
                 a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(a);
-                finish();
+//                System.exit(1);
+//                finish();
             }
         });
     }

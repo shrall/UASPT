@@ -57,5 +57,4 @@ public class playersAdapter extends RecyclerView.Adapter<playersAdapter.MyViewHo
             player_img = itemView.findViewById(R.id.player_imgprompt);
         }
     }
-
 }
