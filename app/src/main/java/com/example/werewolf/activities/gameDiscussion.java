@@ -29,7 +29,7 @@ public class gameDiscussion extends AppCompatActivity {
         text1 = findViewById(R.id.tvguide3);
         button = findViewById(R.id.btn_next);
 
-        cdTimer = new CountDownTimer(30000, 1000) { // adjust the milli seconds here
+        cdTimer = new CountDownTimer(300000, 1000) { // adjust the milli seconds here
 
             public void onTick(long millisUntilFinished) {
 
