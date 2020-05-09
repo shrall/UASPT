@@ -28,7 +28,11 @@ public class villagerWin extends AppCompatActivity {
             public void onClick(View view) {
                 startPlayersArray.theData.clear();
                 PlayersArray.theData.clear();
+                startPlayersArray.killed.clear();
+                startPlayersArray.werewolves.clear();
+                startPlayersArray.huntered.clear();
                 startPlayersArray.index = 0;
+                startPlayersArray.declareRole = 0;
                 Intent intent = new Intent(villagerWin.this, mainmenu.class);
                 startActivity(intent);
                 finish();

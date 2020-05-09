@@ -28,7 +28,7 @@ public class gameDiscussion extends AppCompatActivity {
         text1 = findViewById(R.id.tvguide3);
         button = findViewById(R.id.btn_next);
 
-        new CountDownTimer(300000, 1000) { // adjust the milli seconds here
+        new CountDownTimer(30000, 1000) { // adjust the milli seconds here
 
             public void onTick(long millisUntilFinished) {
 
@@ -39,6 +39,7 @@ public class gameDiscussion extends AppCompatActivity {
 
             public void onFinish() {
                 Intent intent = new Intent(gameDiscussion.this, gameVoting.class);
+                startPlayersArray.index = 0;
                 startActivity(intent);
             }
         }.start();
@@ -47,8 +48,8 @@ public class gameDiscussion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(gameDiscussion.this, gameVoting.class);
-                startActivity(intent);
                 startPlayersArray.index = 0;
+                startActivity(intent);
             }
         });
     }
