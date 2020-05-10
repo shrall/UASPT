@@ -28,6 +28,9 @@ public class werewolfWin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_werewolf_win);
+        gameStart.nightstart.start();
+        finishTurn.daybgm.stop();
+        finishTurn.daybgm.setLooping(false);
         thePlayers = PlayersArray.theData;
         RecyclerView myrv = findViewById(R.id.myrv);
         playersAdapter myAdapter = new playersAdapter(this, thePlayers);

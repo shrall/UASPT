@@ -27,6 +27,9 @@ public class villagerWin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_villager_win);
+        finishTurn.daystart.start();
+        gameStart.nightbgm.stop();
+        gameStart.nightbgm.setLooping(false);
         thePlayers = PlayersArray.theData;
         RecyclerView myrv = findViewById(R.id.myrv);
         playersAdapter myAdapter = new playersAdapter(this, thePlayers);

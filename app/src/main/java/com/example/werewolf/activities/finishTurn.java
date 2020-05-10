@@ -3,6 +3,7 @@ package com.example.werewolf.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,11 +30,19 @@ import static com.example.werewolf.model.startPlayersArray.two;
 public class finishTurn extends AppCompatActivity {
     Button next;
     int one = 0, two = 0, three = 0, four = 0, five = 0, six = 0, seven = 0, eight = 0, dead = 0, most = 0, cancel = 0;
+    public static MediaPlayer daystart,daybgm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finish_turn);
+        gameStart.nightbgm.stop();
+        gameStart.nightbgm.setLooping(false);
+        daystart = MediaPlayer.create(finishTurn.this,R.raw.daystart);
+        daybgm = MediaPlayer.create(finishTurn.this,R.raw.daybgm);
+        daybgm.start();
+        daybgm.setLooping(true);
+        daystart.start();
         next = findViewById(R.id.btn_next);
 
         if (startPlayersArray.guardedPlayer.size() != 0) {
@@ -297,10 +306,6 @@ public class finishTurn extends AppCompatActivity {
                 startPlayersArray.killedPlayer.clear();
                 startPlayersArray.guardedPlayer.clear();
                 startPlayersArray.huntedPlayer.clear();
-
-//                Toast.makeText(finishTurn.this, String.valueOf(startPlayersArray.theData.size())+ one + two + three
-//                        +four+five+six+seven+eight+ startPlayersArray.killed.size()+ startPlayersArray.killedPlayer.size()+
-//                        startPlayersArray.huntedPlayer.size()+ startPlayersArray.guardedPlayer.size(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(finishTurn.this, killedPrompt.class);
                 startActivity(intent);
             }

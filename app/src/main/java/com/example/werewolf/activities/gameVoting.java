@@ -43,6 +43,8 @@ public class gameVoting extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_voting);
+        finishTurn.daybgm.stop();
+        finishTurn.daybgm.setLooping(false);
         actionedPlayer = findViewById(R.id.playernameaction);
         votingPlayer = findViewById(R.id.playerrolename);
         votingPlayerImg = findViewById(R.id.player_imgprompt);

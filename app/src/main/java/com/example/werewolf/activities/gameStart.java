@@ -3,6 +3,7 @@ package com.example.werewolf.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -24,11 +25,19 @@ public class gameStart extends AppCompatActivity {
     Players p;
     Button tb;
     ArrayList<startPlayers> dePlayers;
+    public static MediaPlayer nightbgm, nightstart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_start);
+        mainmenu.ring.stop();
+        mainmenu.ring.setLooping(false);
+        nightstart = MediaPlayer.create(gameStart.this,R.raw.nightstart);
+        nightbgm = MediaPlayer.create(gameStart.this,R.raw.nightbgm);
+        nightbgm.start();
+        nightbgm.setLooping(true);
+        nightstart.start();
         tb = findViewById(R.id.btn_reveal);
         startPlayersArray.index = 0;
         ww = selectRoles.ww;

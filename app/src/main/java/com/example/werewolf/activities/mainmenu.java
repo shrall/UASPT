@@ -16,14 +16,15 @@ public class mainmenu extends AppCompatActivity {
 
     TextView textView;
     Button startBtn, rolesBtn, settingsBtn, exitBtn;
-    MediaPlayer ring;
+    public static MediaPlayer ring;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainmenu);
-//        ring = MediaPlayer.create(mainmenu.this,R.raw.somnus);
-//        ring.start();
+        ring = MediaPlayer.create(mainmenu.this,R.raw.mainmenubgm);
+        ring.start();
+        ring.setLooping(true);
 
         textView = findViewById(R.id.title);
         textView.setShadowLayer(1, 1, 2, Color.rgb(134, 133,239));
