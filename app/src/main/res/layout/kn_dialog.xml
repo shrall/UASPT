@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/wolfrole" />
+        app:srcCompat="@drawable/knightrole" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/russo_one"
-        android:text="@string/roleww"
+        android:text="@string/roleknight"
         android:textColor="@color/design_default_color_background"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
@@ -62,7 +62,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="122dp"
         android:fontFamily="@font/russo_one"
-        android:text="The werewolves main objective is to kill all\nof the villagers. They need to hide from\nthe seers and make sure to kill a villager\neach night, without anyone noticing."
+        android:text="The knight belongs to the villagers team.\n The guard main objective is to guess\n which player is their teammate and guard\nthem from the werewolves."
         android:textColor="@color/design_default_color_background"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
@@ -79,7 +79,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="122dp"
         android:fontFamily="@font/russo_one"
-        android:text="Each night, the player has the ability to kill\na villager. Only 1 villager can be killed\neach night."
+        android:text="Each night, the player has the ability to\nguard a player. A guarded player cannot be\nkilled during that night."
         android:textColor="@color/design_default_color_background"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
@@ -95,7 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/russo_one"
-        android:text="Ability : Kill"
+        android:text="Ability : Guard"
         android:textColor="@color/design_default_color_background"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"

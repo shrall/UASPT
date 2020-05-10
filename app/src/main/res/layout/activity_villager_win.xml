@@ -37,10 +37,10 @@
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginBottom="44dp"
-        android:background="@drawable/btndarkmode"
+        android:background="@drawable/mainmenubtn"
         android:fontFamily="@font/russo_one"
         android:text="@string/finish"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorPrimary"
         android:textSize="24sp"
 
         app:layout_constraintBottom_toBottomOf="parent"

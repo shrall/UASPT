@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/wolfrole" />
+        app:srcCompat="@drawable/villagerrole" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/russo_one"
-        android:text="@string/roleww"
+        android:text="@string/rolevg"
         android:textColor="@color/design_default_color_background"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
@@ -62,7 +62,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="122dp"
         android:fontFamily="@font/russo_one"
-        android:text="The werewolves main objective is to kill all\nof the villagers. They need to hide from\nthe seers and make sure to kill a villager\neach night, without anyone noticing."
+        android:text="The villagers objective is to survive and\n find who is the werewolf among the\nplayers."
         android:textColor="@color/design_default_color_background"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
@@ -73,29 +73,12 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="122dp"
-        android:fontFamily="@font/russo_one"
-        android:text="Each night, the player has the ability to kill\na villager. Only 1 villager can be killed\neach night."
-        android:textColor="@color/design_default_color_background"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/russo_one"
-        android:text="Ability : Kill"
+        android:text="Ability : None"
         android:textColor="@color/design_default_color_background"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
