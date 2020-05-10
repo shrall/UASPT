@@ -26,63 +26,81 @@
         android:id="@+id/btn_ww"
         android:layout_width="120dp"
         android:layout_height="120dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/wolfrole"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WwTeam"
-        app:layout_constraintVertical_bias="0.061" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="76dp"
-        app:layout_constraintEnd_toEndOf="@+id/btn_ww"
-        app:layout_constraintStart_toStartOf="@+id/btn_ww"
-        app:layout_constraintTop_toBottomOf="@+id/btn_ww"
-        app:srcCompat="@drawable/villagerrole" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="76dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:srcCompat="@drawable/knightrole" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:srcCompat="@drawable/hunterrole" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="76dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:srcCompat="@drawable/seerrole" />
+        app:layout_constraintTop_toBottomOf="@+id/WwTeam" />
 
     <TextView
         android:id="@+id/WwTeam"
-        android:layout_width="117dp"
+        android:layout_width="120dp"
         android:layout_height="21dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/russo_one"
         android:text="Werewolf Team"
+        android:textAlignment="center"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rolesToolbar" />
+
+    <TextView
+        android:id="@+id/HumanTeam"
+        android:layout_width="98dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/russo_one"
+        android:text="Human Team"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ww" />
+
+    <Button
+        android:id="@+id/btn_vilager"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/villagerrole"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HumanTeam" />
+
+    <Button
+        android:id="@+id/btn_guard"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/knightrole"
+        app:layout_constraintEnd_toEndOf="@+id/btn_vilager"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_vilager"
+        app:layout_constraintTop_toBottomOf="@+id/btn_vilager" />
+
+    <Button
+        android:id="@+id/btn_seer"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/seerrole"
+        app:layout_constraintEnd_toStartOf="@+id/btn_guard"
+        app:layout_constraintTop_toBottomOf="@+id/btn_vilager" />
+
+    <Button
+        android:id="@+id/btn_hunter"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/hunterrole"
+        app:layout_constraintStart_toEndOf="@+id/btn_guard"
+        app:layout_constraintTop_toBottomOf="@+id/btn_vilager" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
