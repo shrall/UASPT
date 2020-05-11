@@ -28,6 +28,8 @@ public class villagerWin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_villager_win);
         finishTurn.daystart.start();
+        finishTurn.daybgm.start();
+        finishTurn.daybgm.setLooping(true);
         gameStart.nightbgm.stop();
         gameStart.nightbgm.setLooping(false);
         thePlayers = PlayersArray.theData;
@@ -37,7 +39,6 @@ public class villagerWin extends AppCompatActivity {
         myrv.setAdapter(myAdapter);
         congrats = findViewById(R.id.tvguide);
         btn = findViewById(R.id.btn_reveal);
-
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,6 +49,8 @@ public class villagerWin extends AppCompatActivity {
                 startPlayersArray.huntered.clear();
                 startPlayersArray.index = 0;
                 startPlayersArray.declareRole = 0;
+                finishTurn.daybgm.stop();
+                finishTurn.daybgm.setLooping(false);
                 Intent intent = new Intent(villagerWin.this, mainmenu.class);
                 startActivity(intent);
                 finish();

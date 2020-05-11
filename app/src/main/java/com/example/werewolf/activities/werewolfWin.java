@@ -29,6 +29,8 @@ public class werewolfWin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_werewolf_win);
         gameStart.nightstart.start();
+        gameStart.nightbgm.start();
+        gameStart.nightbgm.setLooping(true);
         finishTurn.daybgm.stop();
         finishTurn.daybgm.setLooping(false);
         thePlayers = PlayersArray.theData;
@@ -48,6 +50,8 @@ public class werewolfWin extends AppCompatActivity {
                 startPlayersArray.huntered.clear();
                 startPlayersArray.index = 0;
                 startPlayersArray.declareRole = 0;
+                gameStart.nightbgm.stop();
+                gameStart.nightbgm.setLooping(false);
                 Intent intent = new Intent(werewolfWin.this, mainmenu.class);
                 startActivity(intent);
                 finish();
