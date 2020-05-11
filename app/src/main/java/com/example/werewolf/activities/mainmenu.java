@@ -58,6 +58,8 @@ public class mainmenu extends AppCompatActivity {
         exitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ring.stop();
+                ring.setLooping(false);
                 Intent a = new Intent(Intent.ACTION_MAIN);
                 a.addCategory(Intent.CATEGORY_HOME);
                 a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
