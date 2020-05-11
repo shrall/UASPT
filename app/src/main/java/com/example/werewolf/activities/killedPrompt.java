@@ -52,13 +52,14 @@ public class killedPrompt extends AppCompatActivity {
                     Intent intent = new Intent(killedPrompt.this, villagerWin.class);
                     startActivity(intent);
                 } else {
-                startPlayersArray.killed.clear();
+                    startPlayersArray.killed.clear();
                     Intent intent = new Intent(killedPrompt.this, gameDiscussion.class);
                     startActivity(intent);
                 }
             }
         });
     }
+
     @Override
     public void onBackPressed() {
 
