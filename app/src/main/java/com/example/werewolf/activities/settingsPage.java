@@ -22,7 +22,7 @@ public class settingsPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_page);
 
-        toolbar = findViewById(R.id.rolesToolbar);
+        toolbar = findViewById(R.id.settingsToolbar);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
